@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Grass
+  - Enemy
+  - Stone
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -11,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
@@ -41,12 +45,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Layer 1
+  - name: BackGroud
     uniqueID: 2425651459
     locked: 0
-  - name: Layer 2
+  - name: Middle
     uniqueID: 4250941897
     locked: 0
-  - name: Layer 3
+  - name: Role
     uniqueID: 4189426099
     locked: 0
