@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Grass
   itemImage: {fileID: 21300000, guid: 7fcd9caf79a8c3b4d8f26b2f3ad31cae, type: 2}
-  itemhold: 1
+  itemhold: 3
   itemInfo: 
   equip: 0
