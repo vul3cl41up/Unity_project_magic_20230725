@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using Model_scene_1;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ namespace Model_scene_2
         public Status Status_Now => status_now;
         private Rigidbody2D rb;
         private float global_timer = 0;
+        Vector3 role_position_offset = new Vector3 (0, 0.33f, 0);
 
         #region 角色物件
         GameObject role_now;
@@ -47,7 +49,11 @@ namespace Model_scene_2
         private float attack_time = 0.6f;
         private float attack_timer = 0f;
         private float time_send_attack = 0.3f;
-        private bool canAttack = true; 
+        private bool canAttack = true;
+        Collider2D hit = null;
+        Rigidbody2D hit_rb;
+        Enemy_base hit_script;
+        Transform hit_base;
         #endregion
         #region 攻擊範圍
         [SerializeField]
@@ -86,6 +92,12 @@ namespace Model_scene_2
         [SerializeField]
         private Image magic_image;
         #endregion
+        #region 生命值值參數
+        private float blood = 100f;
+        private float blood_now = 100f;
+        [SerializeField]
+        private Image blood_image;
+        #endregion
         #endregion
 
 
@@ -122,7 +134,6 @@ namespace Model_scene_2
             {
                 isTouch = true;
                 itemObject = collision.gameObject;
-                print(itemObject);
             }
         }
         private void OnTriggerExit2D(Collider2D collision)
@@ -293,7 +304,7 @@ namespace Model_scene_2
             {
                 canAttack = false;
                 if (AttackTarget())
-                    print("送出攻擊檢測");
+                    AttackDeal();
             }
             if (attack_timer >= attack_time)
             {
@@ -531,7 +542,6 @@ namespace Model_scene_2
         }
         bool AttackTarget()
         {
-            Collider2D hit = null;
             if (role_now == role_front)
             {
                 hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(attack_offset_front), attack_size_front, 0, layer_target);
@@ -544,7 +554,18 @@ namespace Model_scene_2
             {
                 hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(attack_offset_side), attack_size_side, 0, layer_target);
             }
+            
+            if(hit)
+            {
+                hit_rb = hit.GetComponentInParent<Rigidbody2D>();
+                hit_script = hit.GetComponentInParent<Enemy_base>();
+                hit_base = hit.GetComponentInParent<Transform>();
+            }
             return hit;
+        }
+        void AttackDeal()
+        {
+            
         }
         bool SkillJFire()
         {

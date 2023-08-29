@@ -9,6 +9,8 @@ TagManager:
   - Stone
   - Ground
   - Prop
+  - Enemy_body
+  - Enemy_arms
   layers:
   - Default
   - TransparentFX
