@@ -1,15 +1,18 @@
 ﻿using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Model_scene_2
 {
     public class Role_Control_Magic : MonoBehaviour
     {
         #region 資料
-        public enum Status { Idle, Walk, Jump, Attack }
+        public enum Status { Idle, Walk, Jump, Attack,Skill_J }
         Status status_now;
         public Status Status_Now => status_now;
         private Rigidbody2D rb;
+        private float global_timer = 0;
 
         #region 角色物件
         GameObject role_now;
@@ -65,7 +68,23 @@ namespace Model_scene_2
         #region 道具欄參數
         private bool isTouch = false;
         private GameObject itemObject = null;
-        public Inventory myBag; 
+        public Inventory myBag;
+        #endregion
+        #region 技能J參數
+        private Vector2 oblique_skill_acceleration = new Vector3(8.49f, 8.49f);
+        private float skill_acceleration = 12f;
+        private float skill_j_time = 0.1f;
+        private float skill_j_timer = 0;
+        private float skill_j_cooling_time = 1f;
+        private float skill_j_cooling_timer = 0;
+        private bool can_skill_j = true;
+        private float skill_j_consume = 10f;
+        #endregion
+        #region 魔力值參數
+        private float magic = 100f;
+        private float magic_now = 100f;
+        [SerializeField]
+        private Image magic_image;
         #endregion
         #endregion
 
@@ -94,9 +113,8 @@ namespace Model_scene_2
         }
         private void FixedUpdate()
         {
+            global_timer += Time.fixedDeltaTime;
             RunStatus();
-
-            print($"速度({rb.velocity.x},{rb.velocity.y})");
         }
         private void OnTriggerStay2D(Collider2D collision)
         {
@@ -131,6 +149,8 @@ namespace Model_scene_2
                 RunJumpStatus();
             else if (status_now == Status.Attack)
                 RunAttackStatus();
+            else if (status_now == Status.Skill_J)
+                RunSkillJStatus();
         }
         /// <summary>
         /// 當狀態是等待時進行的動作
@@ -138,12 +158,15 @@ namespace Model_scene_2
         void RunIdleStatus()
         {
             ChangeAcceleration();
-            if (Input.GetKeyDown(KeyCode.H))
+            if (Input.GetKeyDown(KeyCode.J) && SkillJFire())
+                status_now = Status.Skill_J;
+            else if (Input.GetKeyDown(KeyCode.H))
                 status_now = Status.Attack;
             else if (Input.GetKeyDown(KeyCode.Space))
                 status_now = Status.Jump;
             else if (change_x != 0 || change_y != 0)
                 status_now = Status.Walk;
+
         }
         /// <summary>
         /// 當狀態是走路/跑步時進行的動作
@@ -152,7 +175,12 @@ namespace Model_scene_2
         {
             ChangeAcceleration();
 
-            if (Input.GetKeyDown(KeyCode.H))
+            if (Input.GetKeyDown(KeyCode.J) && SkillJFire())
+            {
+                status_now = Status.Skill_J;
+                return;
+            }
+            else if (Input.GetKeyDown(KeyCode.H))
             {
                 status_now = Status.Attack;
                 return;
@@ -181,8 +209,6 @@ namespace Model_scene_2
                 jump_happend = false;
                 return;
             }
-
-
             if (!jump_happend)
             {
                 jump_happend = true;
@@ -244,7 +270,14 @@ namespace Model_scene_2
 
                 ChangeDirect();
             }
-            if (Input.GetKeyDown(KeyCode.H))
+            if (Input.GetKeyDown(KeyCode.J) && SkillJFire())
+            {
+                status_now = Status.Skill_J;
+                jump_timer = 0;
+                jump_happend = false;
+                return;
+            }
+            else if (Input.GetKeyDown(KeyCode.H))
             {
                 jump_timer = 0;
                 status_now = Status.Attack;
@@ -269,6 +302,37 @@ namespace Model_scene_2
                 status_now = Status.Walk;
             }
 
+        }
+        void RunSkillJStatus()
+        {
+            skill_j_timer += Time.fixedDeltaTime;
+            if(can_skill_j)
+            {
+                can_skill_j = false;
+                magic_now -= skill_j_consume;
+                magic_image.fillAmount = magic_now/magic;
+
+                if (change_x != 0 && change_y != 0)
+                {
+                    rb.velocity += new Vector2(oblique_skill_acceleration.x * change_x, oblique_skill_acceleration.y * change_y);
+                }
+                else if (change_x != 0)
+                {
+                    rb.velocity += new Vector2(change_x * skill_acceleration, rb.velocity.y);
+                }
+                else if (change_y != 0)
+                {
+                    rb.velocity += new Vector2(rb.velocity.x, change_y * skill_acceleration);
+                }
+
+            }
+            else if(skill_j_timer >= skill_j_time)
+            {
+                can_skill_j = true;
+                skill_j_timer = 0;
+                skill_j_cooling_timer = global_timer;
+                status_now = Status.Walk;
+            }
         }
         private void ChangeAcceleration()
         {
@@ -481,6 +545,16 @@ namespace Model_scene_2
                 hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(attack_offset_side), attack_size_side, 0, layer_target);
             }
             return hit;
+        }
+        bool SkillJFire()
+        {
+            if (magic_now < skill_j_consume)
+                return false;
+            if (global_timer - skill_j_cooling_timer < skill_j_cooling_time)
+                return false;
+            if(change_x == 0 && change_y == 0)
+                return false;
+            return true;
         }
         private void PickUp()
         {

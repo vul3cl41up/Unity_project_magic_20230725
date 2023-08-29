@@ -15,6 +15,7 @@ namespace Model_scene_2
         GameObject ani_jump;
         GameObject ani_attack;
 
+
         #endregion
         private void Start()
         {
