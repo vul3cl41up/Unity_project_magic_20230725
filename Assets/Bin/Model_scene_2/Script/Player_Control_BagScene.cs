@@ -10,7 +10,6 @@ namespace Model_scene_2
 
         private bool isTouch = false;
         private GameObject itemObject = null;
-
         public Inventory myBag;
 
 
@@ -49,14 +48,12 @@ namespace Model_scene_2
                 print(itemObject);
             }
         }
-
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "Prop")
             {
                 isTouch = false;
                 itemObject = null;
-
             }
         }
 

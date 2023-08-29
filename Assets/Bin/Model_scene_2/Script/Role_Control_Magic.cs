@@ -11,25 +11,26 @@ namespace Model_scene_2
         public Status Status_Now => status_now;
         private Rigidbody2D rb;
 
+        #region 角色物件
         GameObject role_now;
         GameObject role_front;
         GameObject role_back;
-        GameObject role_side;
-
-        [Header("方向")]
+        GameObject role_side; 
+        #endregion
+        #region 方向
         private int x_direction = 0;
         private int change_x;
         private int y_direction = 0;
-        private int change_y;
-
-        [Header("移動參數")]
+        private int change_y; 
+        #endregion
+        #region 移動參數
         private Vector2 oblique_acceleration = new Vector3(3.54f, 3.54f);
         private Vector2 x_acceleration = new Vector3(5f, 0);
         private Vector2 y_acceleration = new Vector3(0, 5f);
         private Vector2 change_acceleration;
-        private float resistance = 2.4f;
-
-        [Header("跳躍參數")]
+        private float resistance = 2.4f; 
+        #endregion
+        #region 跳躍參數
         private Vector2 oblique_jump_acceleration = new Vector3(4.24f, 4.24f);
         private Vector2 x_jump_acceleration = new Vector3(6f, 0);
         private Vector2 y_jump_acceleration = new Vector3(0, 6f);
@@ -37,15 +38,15 @@ namespace Model_scene_2
         private float oblique_jump_resistance = 4.42f;
         private float jump_time = 0.6f;
         private float jump_timer = 0;
-        private bool jump_happend = false;
-
-        [Header("攻擊參數")]
+        private bool jump_happend = false; 
+        #endregion
+        #region 攻擊參數
         private float attack_time = 0.6f;
         private float attack_timer = 0f;
         private float time_send_attack = 0.3f;
-        private bool canAttack = true;
-
-        [Header("攻擊範圍")]
+        private bool canAttack = true; 
+        #endregion
+        #region 攻擊範圍
         [SerializeField]
         private Vector3 attack_size_front = new Vector3(1.5f, 0.5f, 0);
         [SerializeField]
@@ -59,7 +60,13 @@ namespace Model_scene_2
         [SerializeField]
         private Vector3 attack_offset_back = new Vector3(0, 1.6f, 0);
         [SerializeField]
-        private LayerMask layer_target;
+        private LayerMask layer_target; 
+        #endregion
+        #region 道具欄參數
+        private bool isTouch = false;
+        private GameObject itemObject = null;
+        public Inventory myBag; 
+        #endregion
         #endregion
 
 
@@ -81,14 +88,33 @@ namespace Model_scene_2
             status_now = Status.Idle;
             layer_target = LayerMask.GetMask("Enemy");
         }
-
+        private void Update()
+        {
+            PickUp();
+        }
         private void FixedUpdate()
         {
             RunStatus();
 
             print($"速度({rb.velocity.x},{rb.velocity.y})");
         }
-
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Prop")
+            {
+                isTouch = true;
+                itemObject = collision.gameObject;
+                print(itemObject);
+            }
+        }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Prop")
+            {
+                isTouch = false;
+                itemObject = null;
+            }
+        }
         #endregion
 
         #region 方法
@@ -145,7 +171,6 @@ namespace Model_scene_2
             ChangeDirect();
             ChangeVeolocity();
         }
-
         void RunJumpStatus()
         {
             jump_timer += Time.fixedDeltaTime;
@@ -228,7 +253,6 @@ namespace Model_scene_2
             }
 
         }
-
         void RunAttackStatus()
         {
             attack_timer += Time.fixedDeltaTime;
@@ -246,7 +270,6 @@ namespace Model_scene_2
             }
 
         }
-
         private void ChangeAcceleration()
         {
             if (rb.velocity.x > 0)
@@ -321,7 +344,6 @@ namespace Model_scene_2
                 change_y = 0;
             }
         }
-
         void ChangeVeolocity()
         {
             if (change_x == 0 && change_y == 0)
@@ -443,7 +465,6 @@ namespace Model_scene_2
                 }
             }
         }
-
         bool AttackTarget()
         {
             Collider2D hit = null;
@@ -460,6 +481,25 @@ namespace Model_scene_2
                 hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(attack_offset_side), attack_size_side, 0, layer_target);
             }
             return hit;
+        }
+        private void PickUp()
+        {
+            if (isTouch && itemObject != null && Input.GetKeyDown(KeyCode.G))
+            {
+                Item item = itemObject.GetComponent<ItemOnWorld>().thisItem;
+
+                int index = myBag.itemList.FindIndex(x => x == item);
+                if (index != -1)
+                    myBag.itemHold[index]++;
+                else
+                {
+                    myBag.itemList.Add(item);
+                    myBag.itemHold.Add(1);
+                }
+
+                Destroy(itemObject);
+                Inventory_Manager.Refresh();
+            }
         }
         #endregion
     }

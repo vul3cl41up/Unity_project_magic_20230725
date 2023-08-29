@@ -8,11 +8,12 @@ TagManager:
   - Enemy
   - Stone
   - Ground
+  - Prop
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Role
   - Water
   - UI
   - Enemy
@@ -50,6 +51,9 @@ TagManager:
     locked: 0
   - name: Middle
     uniqueID: 4250941897
+    locked: 0
+  - name: Prop
+    uniqueID: 1316048327
     locked: 0
   - name: Role
     uniqueID: 4189426099
