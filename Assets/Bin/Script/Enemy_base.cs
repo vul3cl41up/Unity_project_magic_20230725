@@ -45,7 +45,7 @@ public class Enemy_base : MonoBehaviour
         {
             m_rb2D.velocity = Vector2.zero;
             stopAfterAttack = 1.0f;
-            collision.gameObject.GetComponent<¥D¨¤±±¨î>().TakeDamage(attackDamage);
+            collision.gameObject.GetComponent<Role_control>().TakeDamage(attackDamage);
         }
     }
    

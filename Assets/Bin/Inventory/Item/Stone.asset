@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Stone
-  itemImage: {fileID: 21300000, guid: 72525eafd18abec42a763203239bbb8b, type: 2}
+  itemImage: {fileID: 21300104, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   itemhold: 1
   itemInfo: 
   equip: 0
