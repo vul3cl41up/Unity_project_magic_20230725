@@ -27,7 +27,6 @@ namespace Model_scene_2
             ani_attack = transform.GetChild(3).gameObject;
             ani_now = ani_idle;
         }
-
         private void OnEnable()
         {
             if (parent_script.Status_Now == Role_Control_Magic.Status.Idle)
