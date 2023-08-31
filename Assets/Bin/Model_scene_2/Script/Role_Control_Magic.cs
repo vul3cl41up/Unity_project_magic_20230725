@@ -38,7 +38,6 @@ namespace Model_scene_2
                                          //會以目前速度/resistance得到阻力的加速度，
                                          //因此當速度達到5*2.4=12就會無法再增加速度(因為加速度最大為5)
         #endregion
-
         #region 跳躍參數
         //跳躍的加速度數值
         private Vector2 oblique_jump_acceleration = new Vector3(4.24f, 4.24f);
@@ -54,7 +53,6 @@ namespace Model_scene_2
         //跳躍是否已經執行
         private bool jump_happend = false;
         #endregion
-
         #region 攻擊參數
         private float attack_time = 0.6f;
         private float attack_timer = 0f;
@@ -109,8 +107,6 @@ namespace Model_scene_2
         private Image blood_image;
         #endregion
         #endregion
-
-
         #region 事件
         private void OnDrawGizmos()
         {
@@ -158,7 +154,6 @@ namespace Model_scene_2
             }
         }
         #endregion
-
         #region 方法
         /// <summary>
         /// 根據不同的狀態執行相應的行為
