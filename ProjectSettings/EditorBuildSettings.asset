@@ -4,11 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Bin/Scene/Start_scene.unity
-    guid: 071b00115c9a03e4b8097a3583155de1
-  - enabled: 1
-    path: Assets/Bin/Model_scene_2/Scene/2DTopDown_MagicScene.unity
-    guid: c384188521b8137409044b84f0ebc1c0
+  m_Scenes: []
   m_configObjects: {}
