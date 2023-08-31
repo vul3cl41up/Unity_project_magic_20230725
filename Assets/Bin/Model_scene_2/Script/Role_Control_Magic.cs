@@ -58,7 +58,7 @@ namespace Model_scene_2
         #region 攻擊參數
         private float attack_time = 0.6f;
         private float attack_timer = 0f;
-        private float time_send_attack = 0.3f;
+        private float time_send_attack = 0.3f; //根據動畫調整攻擊判斷時間
         private bool canAttack = true;
         Collider2D hit = null;
         Rigidbody2D hit_rb;
@@ -324,32 +324,37 @@ namespace Model_scene_2
         /// </summary>
         void RunAttackStatus()
         {
+            //攻擊計時器開始計時
             attack_timer += Time.fixedDeltaTime;
+            //當時間超過攻擊判定時間，若尚未攻擊判斷，進行攻擊判斷
             if (attack_timer >= time_send_attack && canAttack)
             {
                 canAttack = false;
-                if (AttackTarget())
+                if (AttackTarget()) //若攻擊範圍內有怪物
                     AttackDeal();
             }
-            if (attack_timer >= attack_time)
+            else if (attack_timer >= attack_time) //當超過攻擊時間，重置攻擊參數，回到走路狀態
             {
                 attack_timer = 0;
                 canAttack = true;
                 status_now = Status.Walk;
             }
         }
+
         /// <summary>
         /// 當狀態是Skill_J時進行的動作
         /// </summary>
         void RunSkillJStatus()
         {
+            //Skill J計時器開始計時
             skill_j_timer += Time.fixedDeltaTime;
-            if(can_skill_j)
+            //若尚未執行
+            if (can_skill_j)
             {
                 can_skill_j = false;
-                magic_now -= skill_j_consume;
-                magic_image.fillAmount = magic_now/magic;
-
+                magic_now -= skill_j_consume; //魔力消耗
+                magic_image.fillAmount = magic_now / magic; //調整魔力顯示
+                                                            //根據加速度方向調整速度
                 if (change_x != 0 && change_y != 0)
                 {
                     rb.velocity += new Vector2(oblique_skill_acceleration.x * change_x, oblique_skill_acceleration.y * change_y);
@@ -362,9 +367,9 @@ namespace Model_scene_2
                 {
                     rb.velocity += new Vector2(rb.velocity.x, change_y * skill_acceleration);
                 }
-
             }
-            else if(skill_j_timer >= skill_j_time)
+            //當Skill J執行完畢回到走路狀態並開始計算冷卻時間
+            else if (skill_j_timer >= skill_j_time)
             {
                 can_skill_j = true;
                 skill_j_timer = 0;
@@ -597,8 +602,13 @@ namespace Model_scene_2
                 }
             }
         }
+        /// <summary>
+        /// 攻擊判斷
+        /// </summary>
+        /// <returns>是否有攻擊到敵人</returns>
         bool AttackTarget()
         {
+            //根據不同方向調整偵測範圍
             if (role_now == role_front)
             {
                 hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(attack_offset_front), attack_size_front, 0, layer_target);
@@ -612,6 +622,7 @@ namespace Model_scene_2
                 hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(attack_offset_side), attack_size_side, 0, layer_target);
             }
             
+            //獲得需要的參數
             if(hit)
             {
                 hit_rb = hit.GetComponentInParent<Rigidbody2D>();
@@ -624,6 +635,10 @@ namespace Model_scene_2
         {
             
         }
+        /// <summary>
+        /// Skill J技能使用判定
+        /// </summary>
+        /// <returns>是否可以執行Skill J</returns>
         bool SkillJFire()
         {
             if (magic_now < skill_j_consume)
