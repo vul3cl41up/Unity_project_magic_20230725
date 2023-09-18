@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dff5ea518d916449b368579154b23ab, type: 3}
+  m_Name: init_character_data
+  m_EditorClassIdentifier: 
+  blood: 0
+  blood_now: 0
+  magic: 0
+  magic_now: 0
+  move_speed: 0
+  attack_speed: 0
+  skill_1: {fileID: 0}
+  skill_2: {fileID: 0}
+  skill_3: {fileID: 0}
+  skill_4: {fileID: 0}

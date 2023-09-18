@@ -13,6 +13,7 @@ TagManager:
   - Enemy_arms
   - Skill_button
   - Skill_selected_button
+  - Common_attack
   layers:
   - Default
   - TransparentFX

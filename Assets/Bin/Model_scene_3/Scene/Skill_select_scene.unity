@@ -1044,7 +1044,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 879186132}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1423788168}
+        m_TargetAssemblyTypeName: Model_scene_3.Skill_Panel_Control, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1085858384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1562,6 +1574,7 @@ MonoBehaviour:
   title: {fileID: 2059508469}
   description: {fileID: 1646270612}
   selected: {fileID: 0}
+  character_data: {fileID: 11400000, guid: d39b9a46fb1fc914b9d811361e21aa28, type: 2}
 --- !u!1 &1487950375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,7 +2376,7 @@ GameObject:
   - component: {fileID: 1973545271}
   m_Layer: 5
   m_Name: common_attack
-  m_TagString: Skill_selected_button
+  m_TagString: Common_attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
