@@ -11,6 +11,8 @@ TagManager:
   - Prop
   - Enemy_body
   - Enemy_arms
+  - Skill_button
+  - Skill_selected_button
   layers:
   - Default
   - TransparentFX

@@ -101,8 +101,8 @@ namespace Model_scene_2
         private Image magic_image;
         #endregion
         #region 生命值值參數
-        private float blood = 100f;
-        private float blood_now = 100f;
+        //private float blood = 100f;
+        //private float blood_now = 100f;
         [SerializeField]
         private Image blood_image;
         #endregion
