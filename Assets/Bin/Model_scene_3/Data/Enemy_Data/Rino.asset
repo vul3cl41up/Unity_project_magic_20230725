@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57652ba6c63fa740b535bad6649bd74, type: 3}
   m_Name: Rino
   m_EditorClassIdentifier: 
-  blood: 0
-  blood_now: 0
-  move_speed: 0
-  attack_speed: 0
-  attack_damage: 0
+  blood: 100
+  move_speed: 3
+  attack_speed: 5
+  attack_damage: 20

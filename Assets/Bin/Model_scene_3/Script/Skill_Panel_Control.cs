@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEngine.UI;
+using System;
 
 namespace Model_scene_3
 {
@@ -81,7 +82,7 @@ namespace Model_scene_3
         {
             if (Input.GetButtonDown("Submit") && selected.CompareTag("Skill_selected_button") && choose_count > 0)
             {
-                int index = selected.GetComponent<Skill_Data_Control>().init_skill_data.skill_index;
+                int index = (int)selected.GetComponent<Skill_Data_Control>().init_skill_data.skill_type;
                 skill_pool.transform.GetChild(index).gameObject.SetActive(true);
                 Destroy(selected);
                 choose_count--;
@@ -89,7 +90,7 @@ namespace Model_scene_3
             if(Input.GetButtonDown("Cancel") && choose_count > 0)
             {
                 selected = skill_grid.transform.GetChild(choose_count).gameObject;
-                int index = selected.GetComponent<Skill_Data_Control>().init_skill_data.skill_index;
+                int index = (int)selected.GetComponent<Skill_Data_Control>().init_skill_data.skill_type;
                 skill_pool.transform.GetChild(index).gameObject.SetActive(true);
                 Destroy(selected);
                 choose_count--;

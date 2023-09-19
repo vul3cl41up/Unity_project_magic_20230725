@@ -7,7 +7,6 @@ namespace Model_scene_3
     public class Enemy_Data : ScriptableObject
     {
         public float blood;
-        public float blood_now;
 
         public float move_speed;
         public float attack_speed;

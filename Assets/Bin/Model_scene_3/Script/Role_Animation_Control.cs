@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 namespace Model_scene_3
 {
@@ -7,6 +8,8 @@ namespace Model_scene_3
     {
         Role_Control role_control;
         SpriteRenderer sprite_renderer;
+        [SerializeField]
+        private Image player_blood;
 
         GameObject up;
         GameObject left_up;
@@ -38,6 +41,12 @@ namespace Model_scene_3
             direction_now = right;
 
             role_control.Common_Attack_Received += On_Common_Attack;
+            role_control.Take_Damage_Received += On_Take_Damage;
+        }
+
+        private void On_Take_Damage(object sender, EventArgs e)
+        {
+            player_blood.fillAmount = role_control.character_data.blood_now / role_control.character_data.blood;
         }
 
         private void Update()

@@ -196,8 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodImage: {fileID: 5269571463905934643}
-  FollowRadius: 6
-  isTracking: 0
+  this_enemy_data: {fileID: 11400000, guid: b2987b0d6cbf93c46bec9c3af05164ac, type: 2}
 --- !u!1 &4627016758196228074
 GameObject:
   m_ObjectHideFlags: 0

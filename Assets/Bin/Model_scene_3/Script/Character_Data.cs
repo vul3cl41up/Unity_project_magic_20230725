@@ -12,6 +12,7 @@ namespace Model_scene_3
 
         public float move_speed;
         public float attack_speed;
+        public float attack_damage;
 
         public Skill_Data common_attack;
         public Skill_Data skill_1;
