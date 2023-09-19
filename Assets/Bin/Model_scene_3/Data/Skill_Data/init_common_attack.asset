@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5193af2ad2ece4ea5a96866dbb0574, type: 3}
+  m_Name: init_common_attack
+  m_EditorClassIdentifier: 
+  skill_index: -1
+  skill_name: "\u666E\u901A\u653B\u64CA"
+  skill_description: "\u7269\u7406\u653B\u64CA"
+  skill_image: {fileID: 7482667652216324306, guid: 4a4750e1721094c4a8ec684f097a5786,
+    type: 3}
+  cool_time: 0.6

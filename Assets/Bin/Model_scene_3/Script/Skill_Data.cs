@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Model_scene_3
 {
@@ -9,6 +9,8 @@ namespace Model_scene_3
         public string skill_name;
         [TextArea]
         public string skill_description;
+        public Sprite skill_image;
+        public float cool_time;
     }
 }
 

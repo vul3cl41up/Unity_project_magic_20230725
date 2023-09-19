@@ -1574,7 +1574,8 @@ MonoBehaviour:
   title: {fileID: 2059508469}
   description: {fileID: 1646270612}
   selected: {fileID: 0}
-  character_data: {fileID: 11400000, guid: d39b9a46fb1fc914b9d811361e21aa28, type: 2}
+  init_character_data: {fileID: 11400000, guid: d39b9a46fb1fc914b9d811361e21aa28,
+    type: 2}
 --- !u!1 &1487950375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbf61e5f975cc6448c900bfc869fec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  this_skill_data: {fileID: 11400000, guid: 91e03cee06f8b7543bfeae72f5376c8d, type: 2}
+  init_skill_data: {fileID: 11400000, guid: 91e03cee06f8b7543bfeae72f5376c8d, type: 2}
 --- !u!1 &2020710284
 GameObject:
   m_ObjectHideFlags: 0

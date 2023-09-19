@@ -1,6 +1,10 @@
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 namespace Model_scene_3
 {
     public class Role_Control : MonoBehaviour
@@ -12,6 +16,17 @@ namespace Model_scene_3
         public Character_Data character_data;
 
         public Rigidbody2D Rb2D { get; private set; }
+        public bool can_attack = true;
+
+        Vector2 delta_input;
+        public bool is_attack = false;
+
+        private EventHandler common_attack_received;
+        public event EventHandler Common_Attack_Received
+        {
+            add { common_attack_received += value;}
+            remove { common_attack_received -= value;}
+        }
 
         private void Start()
         {
@@ -19,9 +34,18 @@ namespace Model_scene_3
             Rb2D = GetComponent<Rigidbody2D>();
             direction = Direction.Right;
         }
+        private void Update()
+        {
+            Common_Attack();
+            Skill_1();
+            Skill_2();
+            Skill_3();
+            Skill_4();
+        }
         private void FixedUpdate()
         {
             Move();
+            Change_Direction();
         }
 
         private void Init()
@@ -32,49 +56,105 @@ namespace Model_scene_3
             character_data.magic_now = init_character_data.magic_now;
             character_data.move_speed = init_character_data.move_speed;
             character_data.attack_speed = init_character_data.attack_speed;
-            character_data.skill_1 = init_character_data.skill_1;
-            character_data.skill_2 = init_character_data.skill_2;
-            character_data.skill_3 = init_character_data.skill_3;
-            character_data.skill_4 = init_character_data.skill_4;
+
+            Copy_Skill_Data(character_data.common_attack,init_character_data.common_attack);
+            Copy_Skill_Data(character_data.skill_1,init_character_data.skill_1);
+            Copy_Skill_Data(character_data.skill_2,init_character_data.skill_2);
+            Copy_Skill_Data(character_data.skill_3, init_character_data.skill_3);
+            Copy_Skill_Data(character_data.skill_4, init_character_data.skill_4);
+        }
+
+        void Copy_Skill_Data(Skill_Data copy_skill_data, Skill_Data origin_skill_data)
+        {
+            copy_skill_data.skill_index = origin_skill_data.skill_index;
+            copy_skill_data.skill_name = origin_skill_data.skill_name;
+            copy_skill_data.skill_description = origin_skill_data.skill_description;
+            copy_skill_data.skill_image = origin_skill_data.skill_image;
+            copy_skill_data.cool_time = origin_skill_data.cool_time;
         }
 
         private void Move()
         {
-            Vector2 delta_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
+            delta_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
             delta_input = delta_input.normalized;
             Rb2D.velocity = delta_input * character_data.move_speed;
+        }
 
-            if(delta_input.x > 0 &&  delta_input.y > 0)
+        private void Change_Direction()
+        {
+            if (is_attack)
+                return;
+            if (delta_input.x > 0 && delta_input.y > 0)
             {
                 direction = Direction.Right_Up;
             }
-            else if(delta_input.x > 0 && delta_input.y < 0)
+            else if (delta_input.x > 0 && delta_input.y < 0)
             {
                 direction = Direction.Right_Down;
             }
-            else if(delta_input.x>0)
+            else if (delta_input.x > 0)
             {
                 direction = Direction.Right;
             }
-            else if(delta_input.x < 0 && delta_input.y > 0)
+            else if (delta_input.x < 0 && delta_input.y > 0)
             {
                 direction = Direction.Left_Up;
             }
-            else if(delta_input.x < 0 && delta_input.y < 0)
+            else if (delta_input.x < 0 && delta_input.y < 0)
             {
                 direction = Direction.Left_Down;
             }
-            else if(delta_input.x < 0)
+            else if (delta_input.x < 0)
             {
                 direction = Direction.Left;
             }
-            else if(delta_input.y >0)
+            else if (delta_input.y > 0)
             {
                 direction = Direction.Up;
             }
-            else if(delta_input.y < 0)
+            else if (delta_input.y < 0)
             {
                 direction = Direction.Down;
+            }
+        }
+
+        void Common_Attack()
+        {
+            if(Input.GetButtonDown("Common_Attack") && can_attack)
+            {
+                print($"使用{character_data.common_attack.skill_name}");
+                is_attack = true;
+                can_attack = false;
+                common_attack_received?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        void Skill_1()
+        {
+            if(Input.GetButtonDown("Skill1"))
+            {
+                print($"使用{character_data.skill_1.skill_name}技能");
+            }
+        }
+        void Skill_2()
+        {
+            if (Input.GetButtonDown("Skill2"))
+            {
+                print($"使用{character_data.skill_2.skill_name}技能");
+            }
+        }
+        void Skill_3()
+        {
+            if (Input.GetButtonDown("Skill3"))
+            {
+                print($"使用{character_data.skill_3.skill_name}技能");
+            }
+        }
+        void Skill_4()
+        {
+            if (Input.GetButtonDown("Skill4"))
+            {
+                print($"使用{character_data.skill_4.skill_name}技能");
             }
         }
     }
