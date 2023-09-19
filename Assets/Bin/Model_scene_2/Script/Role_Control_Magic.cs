@@ -60,7 +60,7 @@ namespace Model_scene_2
         private bool canAttack = true;
         Collider2D hit = null;
         Rigidbody2D hit_rb;
-        Enemy_base hit_script;
+        Enemy_base_Control hit_script;
         Transform hit_base;
         #endregion
         #region 攻擊範圍
@@ -621,7 +621,7 @@ namespace Model_scene_2
             if(hit)
             {
                 hit_rb = hit.GetComponentInParent<Rigidbody2D>();
-                hit_script = hit.GetComponentInParent<Enemy_base>();
+                hit_script = hit.GetComponentInParent<Enemy_base_Control>();
                 hit_base = hit.GetComponentInParent<Transform>();
             }
             return hit;

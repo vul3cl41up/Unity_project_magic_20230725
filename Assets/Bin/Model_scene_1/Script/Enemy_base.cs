@@ -1,11 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Model_scene_1
 {
-    public class Enemy_base : MonoBehaviour
+    public class Enemy_base_Control : MonoBehaviour
     {
         private Animator animator;
         private Rigidbody2D m_rb2D;
@@ -85,7 +85,7 @@ namespace Model_scene_1
         }
         private void Flip()
         {
-            //�ਭ
+            //轉身
             if (m_rb2D.velocity.x > 0)
             {
                 GetComponent<SpriteRenderer>().flipX = true;

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -92,7 +92,7 @@ namespace Model_scene_1
             }
 
             if (attacking == true && attackTrigger.AttackTarget() != null)
-                attackTrigger.AttackTarget().GetComponent<Enemy_base>().TakeDamage(attackDamage);
+                attackTrigger.AttackTarget().GetComponent<Enemy_base_Control>().TakeDamage(attackDamage);
             /*
             Collider2D[] enemyColList = new Collider2D[5];
             int enemyCount = attackTrigger.OverlapCollider(enemyFilter, enemyColList);
