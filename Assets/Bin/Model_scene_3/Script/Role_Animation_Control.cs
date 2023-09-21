@@ -11,15 +11,15 @@ namespace Model_scene_3
         [SerializeField]
         private Image player_blood;
 
-        GameObject up;
-        GameObject left_up;
-        GameObject left;
-        GameObject left_down;
-        GameObject down;
-        GameObject right_down;
-        GameObject right;
-        GameObject right_up;
-        GameObject direction_now;
+        GameObject up;SpriteRenderer up_sprite_renderer;
+        GameObject left_up;SpriteRenderer left_up_sprite_renderer;
+        GameObject left; SpriteRenderer left_sprite_renderer;
+        GameObject left_down; SpriteRenderer left_down_sprite_renderer;
+        GameObject down; SpriteRenderer down_sprite_renderer;
+        GameObject right_down; SpriteRenderer right_down_sprite_renderer;
+        GameObject right; SpriteRenderer right_sprite_renderer;
+        GameObject right_up; SpriteRenderer right_up_sprite_renderer;
+        GameObject direction_now; SpriteRenderer direction_now_sprite_renderer;
 
         Animator animator;
 
@@ -30,6 +30,7 @@ namespace Model_scene_3
             sprite_renderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
 
+            #region 取得方向物件
             up = transform.GetChild(0).gameObject;
             left_up = transform.GetChild(1).gameObject;
             left = transform.GetChild(2).gameObject;
@@ -39,6 +40,18 @@ namespace Model_scene_3
             right = transform.GetChild(6).gameObject;
             right_up = transform.GetChild(7).gameObject;
             direction_now = right;
+            #endregion
+            #region 八個方向的圖片
+            up_sprite_renderer = up.GetComponent<SpriteRenderer>();
+            left_up_sprite_renderer = left_up.GetComponent<SpriteRenderer>();
+            left_sprite_renderer = left.GetComponent<SpriteRenderer>();
+            left_down_sprite_renderer = left_down.GetComponent<SpriteRenderer>();
+            down_sprite_renderer = down.GetComponent<SpriteRenderer>();
+            right_down_sprite_renderer = right_down.GetComponent<SpriteRenderer>();
+            right_sprite_renderer = right.GetComponent<SpriteRenderer>();
+            right_up_sprite_renderer = right_up.GetComponent<SpriteRenderer>();
+            direction_now_sprite_renderer = right_sprite_renderer; 
+            #endregion
 
             role_control.Common_Attack_Received += On_Common_Attack;
             role_control.Take_Damage_Received += On_Take_Damage;
@@ -46,7 +59,7 @@ namespace Model_scene_3
 
         private void On_Take_Damage(object sender, EventArgs e)
         {
-            player_blood.fillAmount = role_control.state_data.character_data.blood_now / role_control.state_data.character_data.blood;
+            player_blood.fillAmount = role_control.Blood_Now / role_control.Blood;
         }
 
         private void Update()
@@ -61,72 +74,80 @@ namespace Model_scene_3
             {
                 if(direction_now != up)
                 {
-                    direction_now.SetActive(false);
                     direction_now = up;
-                    direction_now.SetActive(true);
+                    direction_now_sprite_renderer.enabled = false;
+                    direction_now_sprite_renderer = up_sprite_renderer;
+                    direction_now_sprite_renderer.enabled = true;
                 }
             }
             else if (role_control.Direction_Now == Role_Control.Direction.Left_Up)
             {
                 if (direction_now != left_up)
                 {
-                    direction_now.SetActive(false);
                     direction_now = left_up;
-                    direction_now.SetActive(true);
+                    direction_now_sprite_renderer.enabled = false;
+                    direction_now_sprite_renderer = left_up_sprite_renderer;
+                    direction_now_sprite_renderer.enabled = true;
                 }
             }
             else if (role_control.Direction_Now == Role_Control.Direction.Left)
             {
                 if (direction_now != left)
                 {
-                    direction_now.SetActive(false);
                     direction_now = left;
-                    direction_now.SetActive(true);
+                    direction_now_sprite_renderer.enabled = false;
+                    direction_now_sprite_renderer = left_sprite_renderer;
+                    direction_now_sprite_renderer.enabled = true;
                 }
             }
             else if (role_control.Direction_Now == Role_Control.Direction.Left_Down)
             {
                 if (direction_now != left_down)
                 {
-                    direction_now.SetActive(false);
                     direction_now = left_down;
-                    direction_now.SetActive(true);
+                    direction_now_sprite_renderer.enabled = false;
+                    direction_now_sprite_renderer = left_down_sprite_renderer;
+                    direction_now_sprite_renderer.enabled = true;
                 }
             }
             else if (role_control.Direction_Now == Role_Control.Direction.Down)
             {
                 if (direction_now != down)
                 {
-                    direction_now.SetActive(false);
                     direction_now = down;
-                    direction_now.SetActive(true);
+                    direction_now_sprite_renderer.enabled = false;
+                    direction_now_sprite_renderer = down_sprite_renderer;
+                    direction_now_sprite_renderer.enabled = true;
                 }
             }
             else if (role_control.Direction_Now == Role_Control.Direction.Right_Down)
             {
                 if (direction_now != right_down)
                 {
-                    direction_now.SetActive(false);
                     direction_now = right_down;
-                    direction_now.SetActive(true);
+                    direction_now_sprite_renderer.enabled = false;
+                    direction_now_sprite_renderer = right_down_sprite_renderer;
+                    direction_now_sprite_renderer.enabled = true;
                 }
             }
             else if (role_control.Direction_Now == Role_Control.Direction.Right)
             {
                 if (direction_now != right)
                 {
-                    direction_now.SetActive(false);
                     direction_now = right;
-                    direction_now.SetActive(true);
+                    direction_now_sprite_renderer.enabled = false;
+                    direction_now_sprite_renderer = right_sprite_renderer;
+                    direction_now_sprite_renderer.enabled = true;
                 }
             }
             else if (role_control.Direction_Now == Role_Control.Direction.Right_Up)
             {
                 if (direction_now != right_up)
                 {
-                    direction_now.SetActive(false);
                     direction_now = right_up;
-                    direction_now.SetActive(true);
+                    direction_now_sprite_renderer.enabled = false;
+                    direction_now_sprite_renderer = right_up_sprite_renderer;
+                    direction_now_sprite_renderer.enabled = true;
                 }
             }
         }

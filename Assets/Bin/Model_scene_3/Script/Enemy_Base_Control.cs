@@ -129,11 +129,12 @@ namespace Model_scene_3
                 animator.SetTrigger("Dead");
         }
 
-        public virtual void Take_Damage(Character_Data player_data, Skill_Data skill_data)
+        public virtual void Take_Damage(Role_Control role_control, Skill_Type skill_type)
         {
-            if(skill_data.skill_type == Skill_Type.Common_Attack)
+            if(skill_type == Skill_Type.Common_Attack)
             {
-                blood_now -= player_data.attack_damage;
+                Skill_Data skill_data = role_control.Common_Attack_Data;
+                blood_now -= role_control.Attack_Damage;
             }
 
             if(blood_now <= 0)

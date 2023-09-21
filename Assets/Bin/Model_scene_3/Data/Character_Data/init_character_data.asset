@@ -19,8 +19,8 @@ MonoBehaviour:
   move_speed: 5
   attack_speed: 0
   attack_damage: 20
-  common_attack: {fileID: 0}
-  skill_1: {fileID: 0}
-  skill_2: {fileID: 0}
-  skill_3: {fileID: 0}
-  skill_4: {fileID: 0}
+  common_attack: {fileID: 11400000, guid: 91e03cee06f8b7543bfeae72f5376c8d, type: 2}
+  skill_1: {fileID: 11400000, guid: 91e03cee06f8b7543bfeae72f5376c8d, type: 2}
+  skill_2: {fileID: 11400000, guid: 91e03cee06f8b7543bfeae72f5376c8d, type: 2}
+  skill_3: {fileID: 11400000, guid: 91e03cee06f8b7543bfeae72f5376c8d, type: 2}
+  skill_4: {fileID: 11400000, guid: 91e03cee06f8b7543bfeae72f5376c8d, type: 2}
