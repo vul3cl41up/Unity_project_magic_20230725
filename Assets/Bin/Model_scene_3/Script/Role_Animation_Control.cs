@@ -46,7 +46,7 @@ namespace Model_scene_3
 
         private void On_Take_Damage(object sender, EventArgs e)
         {
-            player_blood.fillAmount = role_control.character_data.blood_now / role_control.character_data.blood;
+            player_blood.fillAmount = role_control.state_data.character_data.blood_now / role_control.state_data.character_data.blood;
         }
 
         private void Update()

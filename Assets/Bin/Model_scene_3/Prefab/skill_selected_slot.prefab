@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4048693536218742160}
   - component: {fileID: 7801180980580750607}
   - component: {fileID: 8440691553958061061}
-  - component: {fileID: 5637678321740687696}
+  - component: {fileID: 7305432714983307247}
   - component: {fileID: 2265597965577237097}
   m_Layer: 5
   m_Name: skill_selected_slot
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5637678321740687696
+--- !u!114 &7305432714983307247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9074131840662026483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dbf61e5f975cc6448c900bfc869fec3, type: 3}
+  m_Script: {fileID: 11500000, guid: 81ab598f5c1cc8544bc171005f51b79b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  this_skill_data: {fileID: 0}
+  skill_data: {fileID: 0}
 --- !u!114 &2265597965577237097
 MonoBehaviour:
   m_ObjectHideFlags: 0

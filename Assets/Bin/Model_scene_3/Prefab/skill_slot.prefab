@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4284613704245383812}
   - component: {fileID: 7199531392200271641}
   - component: {fileID: 4585905497184566728}
-  - component: {fileID: 1304171485098088452}
+  - component: {fileID: 1757253966665708945}
   m_Layer: 5
   m_Name: skill_slot
   m_TagString: Skill_button
@@ -211,7 +211,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1304171485098088452
+--- !u!114 &1757253966665708945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5425588699430232423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dbf61e5f975cc6448c900bfc869fec3, type: 3}
+  m_Script: {fileID: 11500000, guid: 81ab598f5c1cc8544bc171005f51b79b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  this_skill_data: {fileID: 0}
+  skill_data: {fileID: 0}
