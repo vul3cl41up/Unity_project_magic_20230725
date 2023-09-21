@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &83405267497418890
 Transform:
   m_ObjectHideFlags: 0
@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5599820707225556269}
-  m_LocalRotation: {x: -0, y: -0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -0.5, y: -0.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.92387956, w: 0.38268343}
+  m_LocalPosition: {x: -0.5, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -135}
 --- !u!212 &5701360562212770765
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -121,8 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b15e3faffd984419aa1ee0e227ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_data: {fileID: 11400000, guid: f46cd7300b2036c469ec3b1f80583f02, type: 2}
-  skill_data: {fileID: 11400000, guid: 3bdb3b7bb04fa284abd5a5a3f27f4f46, type: 2}
+  skill_type: 0
 --- !u!60 &5298482956130944726
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ namespace Model_scene_3
 
         #region 移動參數
         public Rigidbody2D Rb2D { get; private set; }
-        Vector2 delta_input;
+        Vector2 input;
         float move_speed;
         #endregion
 
@@ -146,42 +146,42 @@ namespace Model_scene_3
 
         private void Move()
         {
-            delta_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
-            delta_input = delta_input.normalized;
-            Rb2D.velocity = delta_input * move_speed;
+            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
+            input = input.normalized;
+            Rb2D.velocity = input * move_speed;
         }
 
         private void Change_Direction()
         {
-            if (delta_input.x > 0 && delta_input.y > 0)
+            if (input.x > 0 && input.y > 0)
             {
                 direction = Direction.Right_Up;
             }
-            else if (delta_input.x > 0 && delta_input.y < 0)
+            else if (input.x > 0 && input.y < 0)
             {
                 direction = Direction.Right_Down;
             }
-            else if (delta_input.x > 0)
+            else if (input.x > 0)
             {
                 direction = Direction.Right;
             }
-            else if (delta_input.x < 0 && delta_input.y > 0)
+            else if (input.x < 0 && input.y > 0)
             {
                 direction = Direction.Left_Up;
             }
-            else if (delta_input.x < 0 && delta_input.y < 0)
+            else if (input.x < 0 && input.y < 0)
             {
                 direction = Direction.Left_Down;
             }
-            else if (delta_input.x < 0)
+            else if (input.x < 0)
             {
                 direction = Direction.Left;
             }
-            else if (delta_input.y > 0)
+            else if (input.y > 0)
             {
                 direction = Direction.Up;
             }
-            else if (delta_input.y < 0)
+            else if (input.y < 0)
             {
                 direction = Direction.Down;
             }

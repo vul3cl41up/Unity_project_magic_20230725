@@ -131,13 +131,18 @@ namespace Model_scene_3
 
         public virtual void Take_Damage(Role_Control role_control, Skill_Type skill_type)
         {
-            if(skill_type == Skill_Type.Common_Attack)
+            if(skill_type == role_control.Common_Attack_Data.skill_type)
             {
                 Skill_Data skill_data = role_control.Common_Attack_Data;
                 blood_now -= role_control.Attack_Damage;
             }
+            if (skill_type == role_control.Skill_1_Data.skill_type)
+            {
+                Skill_Data skill_data = role_control.Skill_1_Data;
+                blood_now -= role_control.Attack_Damage;
+            }
 
-            if(blood_now <= 0)
+            if (blood_now <= 0)
             {
                 Destroy(gameObject);
             }

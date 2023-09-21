@@ -11,6 +11,9 @@ namespace Model_scene_3
         [SerializeField]
         private Image player_blood;
 
+        [SerializeField]
+        GameObject fire_ball;
+
         GameObject up;SpriteRenderer up_sprite_renderer;
         GameObject left_up;SpriteRenderer left_up_sprite_renderer;
         GameObject left; SpriteRenderer left_sprite_renderer;
@@ -54,6 +57,10 @@ namespace Model_scene_3
             #endregion
 
             role_control.Common_Attack_Received += On_Common_Attack;
+            role_control.Skill_1_Received += On_Skill_1;
+            role_control.Skill_2_Received += On_Skill_2;
+            role_control.Skill_3_Received += On_Skill_3;
+            role_control.Skill_4_Received += On_Skill_4;
             role_control.Take_Damage_Received += On_Take_Damage;
         }
 
@@ -175,5 +182,28 @@ namespace Model_scene_3
         {
             direction_now.transform.GetChild(0).gameObject.SetActive(true);
         }
+        private void On_Skill_1(object sender, EventArgs e)
+        {
+            GameObject fireball = Instantiate(fire_ball, direction_now.transform.position, direction_now.transform.rotation);
+            fireball.SetActive(true);
+        }
+        private void On_Skill_2(object sender, EventArgs e)
+        {
+
+        }
+        private void On_Skill_3(object sender, EventArgs e)
+        {
+
+        }
+        private void On_Skill_4(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        
+
+        
     }
 }
