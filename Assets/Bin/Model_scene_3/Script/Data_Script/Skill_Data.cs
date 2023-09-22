@@ -11,6 +11,7 @@ namespace Model_scene_3
         public string skill_description;
         public Sprite skill_image;
         public float cool_time;
+        public GameObject skill_prefab;
     }
 }
 

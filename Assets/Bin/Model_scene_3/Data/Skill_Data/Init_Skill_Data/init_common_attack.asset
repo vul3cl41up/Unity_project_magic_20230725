@@ -18,3 +18,5 @@ MonoBehaviour:
   skill_image: {fileID: 7482667652216324306, guid: 4a4750e1721094c4a8ec684f097a5786,
     type: 3}
   cool_time: 0.6
+  skill_prefab: {fileID: 5599820707225556269, guid: 2fe33a3eac17b85478165aaae8dc271d,
+    type: 3}

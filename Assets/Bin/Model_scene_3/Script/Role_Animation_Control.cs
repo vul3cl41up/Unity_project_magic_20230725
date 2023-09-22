@@ -7,14 +7,14 @@ namespace Model_scene_3
     public class Role_Animation_Control : MonoBehaviour
     {
         Role_Control role_control;
+        GameObject common_attack_prefab;
+        GameObject skill_1_prefab;
+        GameObject skill_2_prefab;
+        GameObject skill_3_prefab;
+        GameObject skill_4_prefab;
         SpriteRenderer sprite_renderer;
         [SerializeField]
         private Image player_blood;
-
-        [SerializeField]
-        GameObject fire_ball;
-        [SerializeField]
-        GameObject common_attack;
 
         GameObject up;SpriteRenderer up_sprite_renderer;
         GameObject left_up;SpriteRenderer left_up_sprite_renderer;
@@ -34,6 +34,12 @@ namespace Model_scene_3
             role_control = GetComponent<Role_Control>();
             sprite_renderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+
+            common_attack_prefab = role_control.Current_Character_Data.common_attack.skill_prefab;
+            skill_1_prefab = role_control.Current_Character_Data.skill_1.skill_prefab;
+            skill_2_prefab = role_control.Current_Character_Data.skill_2.skill_prefab;
+            skill_3_prefab = role_control.Current_Character_Data.skill_3.skill_prefab;
+            skill_4_prefab = role_control.Current_Character_Data.skill_4.skill_prefab;
 
             #region 取得方向物件
             up = transform.GetChild(0).gameObject;
@@ -55,20 +61,22 @@ namespace Model_scene_3
             right_down_sprite_renderer = right_down.GetComponent<SpriteRenderer>();
             right_sprite_renderer = right.GetComponent<SpriteRenderer>();
             right_up_sprite_renderer = right_up.GetComponent<SpriteRenderer>();
-            direction_now_sprite_renderer = right_sprite_renderer; 
+            direction_now_sprite_renderer = right_sprite_renderer;
             #endregion
 
+            #region 事件觸發執行
             role_control.Common_Attack_Received += On_Common_Attack;
             role_control.Skill_1_Received += On_Skill_1;
             role_control.Skill_2_Received += On_Skill_2;
             role_control.Skill_3_Received += On_Skill_3;
             role_control.Skill_4_Received += On_Skill_4;
-            role_control.Take_Damage_Received += On_Take_Damage;
+            role_control.Take_Damage_Received += On_Take_Damage; 
+            #endregion
         }
 
         private void On_Take_Damage(object sender, EventArgs e)
         {
-            player_blood.fillAmount = role_control.Blood_Now / role_control.Blood;
+            player_blood.fillAmount = role_control.Current_Character_Data.blood_now / role_control.Current_Character_Data.blood;
         }
 
         private void Update()
@@ -180,33 +188,71 @@ namespace Model_scene_3
                 animator.SetBool("is_run", false);
         }
 
+        GameObject Generate_Skill_Anim(Skill_Type skill_Type, GameObject prefab)
+        {
+            if (skill_Type == Skill_Type.Common_Attack)
+            {
+                return Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * prefab.transform.localPosition,
+                (direction_now.transform.rotation * prefab.transform.rotation),
+                direction_now.transform);
+            }
+            else if(skill_Type == Skill_Type.Skill_A)
+            {
+                return Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * prefab.transform.localPosition,
+                (direction_now.transform.rotation * prefab.transform.rotation));
+            }
+            else if(skill_Type == Skill_Type.Skill_B)
+            {
+                return Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * prefab.transform.localPosition,
+                (direction_now.transform.rotation * prefab.transform.rotation));
+            }
+            else if(skill_Type == Skill_Type.Skill_C)
+            {
+                return Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * prefab.transform.localPosition,Quaternion.identity);
+            }
+            else return null;
+        }
+
         void On_Common_Attack(object sender, EventArgs e)
         {
             //direction_now.transform.GetChild(0).gameObject.SetActive(true);
-            GameObject new_common_attack = Instantiate(common_attack,
-                direction_now.transform.position + direction_now.transform.rotation * new Vector3(-0.5f,0.8f,0),
-                (direction_now.transform.rotation * common_attack.transform.rotation), 
-                direction_now.transform);
-            new_common_attack.GetComponent<Animation_Control>().role_control = role_control;
+            GameObject new_common_attack = Generate_Skill_Anim(
+                role_control.Current_Character_Data.common_attack.skill_type, common_attack_prefab);
+            new_common_attack.GetComponent<Animation_Control>().character_data = role_control.Current_Character_Data;
             new_common_attack.SetActive(true);
         }
         private void On_Skill_1(object sender, EventArgs e)
         {
-            GameObject new_fire_ball = Instantiate(fire_ball, direction_now.transform.position, direction_now.transform.rotation);
-            new_fire_ball.GetComponent<Animation_Control>().role_control = role_control;
-            new_fire_ball.SetActive(true);
+            GameObject new_skill_1 = Generate_Skill_Anim(
+                role_control.Current_Character_Data.skill_1.skill_type, skill_1_prefab);
+            new_skill_1.GetComponent<Animation_Control>().character_data = role_control.Current_Character_Data;
+            new_skill_1.SetActive(true);
         }
         private void On_Skill_2(object sender, EventArgs e)
         {
-
+            GameObject new_skill_2 = Generate_Skill_Anim(
+                role_control.Current_Character_Data.skill_2.skill_type, skill_2_prefab);
+            new_skill_2.GetComponent<Animation_Control>().character_data = role_control.Current_Character_Data;
+            new_skill_2.SetActive(true);
         }
         private void On_Skill_3(object sender, EventArgs e)
         {
-
+            GameObject new_skill_3 = Generate_Skill_Anim(
+                role_control.Current_Character_Data.skill_3.skill_type, skill_3_prefab);
+            new_skill_3.GetComponent<Animation_Control>().character_data = role_control.Current_Character_Data;
+            new_skill_3.SetActive(true);
         }
         private void On_Skill_4(object sender, EventArgs e)
         {
-
+            GameObject new_fire_ball = Instantiate(skill_4_prefab,
+                direction_now.transform.position + direction_now.transform.rotation * skill_4_prefab.transform.localPosition,
+                (direction_now.transform.rotation * skill_4_prefab.transform.rotation));
+            new_fire_ball.GetComponent<Animation_Control>().character_data = role_control.Current_Character_Data;
+            new_fire_ball.SetActive(true);
         }
 
         

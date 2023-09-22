@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: init_skill_B
   m_EditorClassIdentifier: 
   skill_type: 2
-  skill_name: B
-  skill_description: "B\u6280\u80FD"
-  skill_image: {fileID: -2413806693520163455, guid: 96692c07fe1fb1e45930eea8d25c8028,
+  skill_name: "\u96F7\u96D5"
+  skill_description: "\u96F7\u96D5"
+  skill_image: {fileID: 1989461808, guid: eeaaa0459812cb64cad9045c4fddc94d, type: 3}
+  cool_time: 1.2
+  skill_prefab: {fileID: 726469770995712431, guid: 4b1108d3af60df24aab0e5790f013704,
     type: 3}
-  cool_time: 0

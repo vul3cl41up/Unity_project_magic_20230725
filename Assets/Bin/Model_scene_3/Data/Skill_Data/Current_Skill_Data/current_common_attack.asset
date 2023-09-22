@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5193af2ad2ece4ea5a96866dbb0574, type: 3}
   m_Name: current_common_attack
   m_EditorClassIdentifier: 
-  skill_index: -1
+  skill_type: 0
   skill_name: "\u666E\u901A\u653B\u64CA"
-  skill_description: "\u7269\u7406\u653B\u64CA"
+  skill_description: "\u7269\u7406\u653B\u64CA\n123\n123\n123"
+  skill_image: {fileID: 7482667652216324306, guid: 4a4750e1721094c4a8ec684f097a5786,
+    type: 3}
   cool_time: 0.6
+  skill_prefab: {fileID: 5599820707225556269, guid: 2fe33a3eac17b85478165aaae8dc271d,
+    type: 3}

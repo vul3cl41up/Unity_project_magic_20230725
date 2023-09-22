@@ -12,6 +12,7 @@ namespace Model_scene_3
             copy.skill_description = origin.skill_description;
             copy.skill_image = origin.skill_image;
             copy.cool_time = origin.cool_time;
+            copy.skill_prefab = origin.skill_prefab;
         }
     }
     

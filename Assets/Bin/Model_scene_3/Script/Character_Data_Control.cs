@@ -14,11 +14,6 @@ namespace Model_scene_3
             copy.move_speed = origin.move_speed;
             copy.attack_speed = origin.attack_speed;
             copy.attack_damage = origin.attack_damage;
-            
-            copy.skill_1 = origin.skill_1;
-            copy.skill_2 = origin.skill_2;
-            copy.skill_3 = origin.skill_3;
-            copy.skill_4 = origin.skill_4;
         }
     }
 }

@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b15e3faffd984419aa1ee0e227ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character_data: {fileID: 11400000, guid: f46cd7300b2036c469ec3b1f80583f02, type: 2}
   skill_type: 0
 --- !u!60 &5298482956130944726
 PolygonCollider2D:

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Model_scene_1;
+using UnityEditor.U2D.Animation;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Model_scene_3
@@ -30,7 +32,7 @@ namespace Model_scene_3
 
         Role_Control player;
 
-        int count = 100;
+        int count = 50;
 
 
         private void Start()
@@ -38,7 +40,7 @@ namespace Model_scene_3
             animator = GetComponent<Animator>();
             m_rb2D = GetComponent<Rigidbody2D>();
             target = GameObject.FindWithTag("Player");
-            
+
 
             Init_Data();
         }
@@ -87,7 +89,7 @@ namespace Model_scene_3
         {
             attack_timer += Time.deltaTime;
             if (attack_timer > attack_cool_time) can_attack = true;
-            if(is_touch && can_attack)
+            if (is_touch && can_attack)
             {
                 player.Take_Attack(this_enemy_data);
                 can_attack = false;
@@ -99,20 +101,20 @@ namespace Model_scene_3
         {
             count--;
             //轉身
-            if(count <= 0)
+            if (count <= 0)
             {
                 if (m_rb2D.velocity.x > 0)
                 {
                     GetComponent<SpriteRenderer>().flipX = true;
-                    count = 400;
+                    count = 50;
                 }
                 else if (m_rb2D.velocity.x < 0)
                 {
                     GetComponent<SpriteRenderer>().flipX = false;
-                    count = 400;
+                    count = 50;
                 }
             }
-            
+
         }
 
         protected virtual void Handle_Anim()
@@ -129,31 +131,66 @@ namespace Model_scene_3
                 animator.SetTrigger("Dead");
         }
 
-        public virtual void Take_Damage(Role_Control role_control, Skill_Type skill_type)
+        public void Take_Damage(Character_Data character_Data, Skill_Type skill_type)
         {
-            if(skill_type == role_control.Common_Attack_Data.skill_type)
+            if (skill_type == character_Data.common_attack.skill_type)
             {
-                Skill_Data skill_data = role_control.Common_Attack_Data;
-                blood_now -= role_control.Attack_Damage;
-                print(skill_type + " Common_Attack:"+ role_control.Common_Attack_Data.skill_type);
-                print(role_control.Attack_Damage);
-                print(blood_now);
+                Damage_Deal(character_Data, character_Data.common_attack);
             }
-            if (skill_type == role_control.Skill_1_Data.skill_type)
+            else if (skill_type == character_Data.skill_1.skill_type)
             {
-                Skill_Data skill_data = role_control.Skill_1_Data;
-                blood_now -= role_control.Attack_Damage;
-                print(skill_type+" Skill_1:"+ role_control.Skill_1_Data.skill_type);
-                print(blood_now);
+                Damage_Deal(character_Data,
+                    character_Data.skill_1);
+            }
+            else if (skill_type == character_Data.skill_2.skill_type)
+            {
+                Damage_Deal(character_Data,
+                    character_Data.skill_2);
+            }
+            else if (skill_type == character_Data.skill_3.skill_type)
+            {
+                Damage_Deal(character_Data,
+                    character_Data.skill_3);
+            }
+            else if (skill_type == character_Data.skill_4.skill_type)
+            {
+                Damage_Deal(character_Data,
+                    character_Data.skill_4);
             }
 
             if (blood_now <= 0)
             {
                 Destroy(gameObject);
             }
+
+        }
+        protected virtual void Damage_Deal(Character_Data character_data, Skill_Data skill_data)
+        {
+
+            if (skill_data.skill_type == Skill_Type.Common_Attack)
+            {
+                blood_now -= character_data.attack_damage;
+            }
+            else if(skill_data.skill_type == Skill_Type.Skill_A)
+            {
+                blood_now -= character_data.attack_damage;
+            }
+            else if (skill_data.skill_type == Skill_Type.Skill_B)
+            {
+                blood_now -= character_data.attack_damage;
+            }
+            else if (skill_data.skill_type == Skill_Type.Skill_C)
+            {
+                blood_now -= character_data.attack_damage;
+            }
+            else if (skill_data.skill_type == Skill_Type.Skill_D)
+            {
+                blood_now -= character_data.attack_damage;
+            }
+
         }
 
 
-    }
+}
 }
 

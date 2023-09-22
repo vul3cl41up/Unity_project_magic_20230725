@@ -4,7 +4,6 @@ namespace Model_scene_3
 {
     public class Fireball_Control : Animation_Control
     {
-        Animator animator;
         bool is_exploit = false;
         private void Start()
         {
@@ -47,7 +46,7 @@ namespace Model_scene_3
         protected override IEnumerator Start_Attack(Collider2D collision)
         {
             yield return new WaitForSeconds(0.02f);
-            if(collision) collision.gameObject.GetComponent<Enemy_Base_Control>().Take_Damage(role_control, skill_type);
+            if(collision) collision.gameObject.GetComponent<Enemy_Base_Control>().Take_Damage(character_data, skill_type);
         }
 
     }
