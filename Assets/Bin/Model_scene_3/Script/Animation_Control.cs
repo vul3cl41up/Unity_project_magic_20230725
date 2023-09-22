@@ -32,7 +32,7 @@ namespace Model_scene_3
         protected virtual IEnumerator Start_Attack(Collider2D collision)
         {
             yield return new WaitForSeconds(0.2f);
-            collision.gameObject.GetComponent<Enemy_Base_Control>().Take_Damage(character_data, skill_type);
+            if(collision)collision.gameObject.GetComponent<Enemy_Base_Control>().Take_Damage(character_data, skill_type);
         }
     }
 

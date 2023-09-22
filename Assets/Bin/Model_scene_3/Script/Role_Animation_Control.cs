@@ -214,6 +214,13 @@ namespace Model_scene_3
                 return Instantiate(prefab,
                 direction_now.transform.position + direction_now.transform.rotation * prefab.transform.localPosition,Quaternion.identity);
             }
+            else if (skill_Type == Skill_Type.Skill_D)
+            {
+                return Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * prefab.transform.localPosition,
+                (direction_now.transform.rotation * prefab.transform.rotation),
+                direction_now.transform);
+            }
             else return null;
         }
 
