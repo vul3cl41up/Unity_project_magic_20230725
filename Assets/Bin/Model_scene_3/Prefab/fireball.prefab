@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1465284987558257011}
   - component: {fileID: 4664010287480721027}
   - component: {fileID: 1879362288339400038}
-  - component: {fileID: 2622309119489119081}
   m_Layer: 0
   m_Name: fireball
   m_TagString: Untagged
@@ -100,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e4289544d44d6499c1a9848242969f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  role_control: {fileID: 0}
   skill_type: 0
 --- !u!95 &4664010287480721027
 Animator:
@@ -157,38 +157,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.20631805, y: 0.016117929}
   m_Size: {x: 0.7873612, y: 0.6584124}
   m_Direction: 1
---- !u!58 &2622309119489119081
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5612608084052180107}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.07599747, y: -0.3126459}
-  serializedVersion: 2
-  m_Radius: 0.9942453

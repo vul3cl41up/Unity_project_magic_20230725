@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5193af2ad2ece4ea5a96866dbb0574, type: 3}
   m_Name: current_skill_C
   m_EditorClassIdentifier: 
-  skill_index: 2
+  skill_type: 3
   skill_name: C
   skill_description: "C\u6280\u80FD"
+  skill_image: {fileID: 0}
+  cool_time: 0

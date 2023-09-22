@@ -13,6 +13,8 @@ namespace Model_scene_3
 
         [SerializeField]
         GameObject fire_ball;
+        [SerializeField]
+        GameObject common_attack;
 
         GameObject up;SpriteRenderer up_sprite_renderer;
         GameObject left_up;SpriteRenderer left_up_sprite_renderer;
@@ -180,12 +182,19 @@ namespace Model_scene_3
 
         void On_Common_Attack(object sender, EventArgs e)
         {
-            direction_now.transform.GetChild(0).gameObject.SetActive(true);
+            //direction_now.transform.GetChild(0).gameObject.SetActive(true);
+            GameObject new_common_attack = Instantiate(common_attack,
+                direction_now.transform.position + direction_now.transform.rotation * new Vector3(-0.5f,0.8f,0),
+                (direction_now.transform.rotation * common_attack.transform.rotation), 
+                direction_now.transform);
+            new_common_attack.GetComponent<Animation_Control>().role_control = role_control;
+            new_common_attack.SetActive(true);
         }
         private void On_Skill_1(object sender, EventArgs e)
         {
-            GameObject fireball = Instantiate(fire_ball, direction_now.transform.position, direction_now.transform.rotation);
-            fireball.SetActive(true);
+            GameObject new_fire_ball = Instantiate(fire_ball, direction_now.transform.position, direction_now.transform.rotation);
+            new_fire_ball.GetComponent<Animation_Control>().role_control = role_control;
+            new_fire_ball.SetActive(true);
         }
         private void On_Skill_2(object sender, EventArgs e)
         {

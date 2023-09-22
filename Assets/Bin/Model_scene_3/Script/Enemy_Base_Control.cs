@@ -135,11 +135,16 @@ namespace Model_scene_3
             {
                 Skill_Data skill_data = role_control.Common_Attack_Data;
                 blood_now -= role_control.Attack_Damage;
+                print(skill_type + " Common_Attack:"+ role_control.Common_Attack_Data.skill_type);
+                print(role_control.Attack_Damage);
+                print(blood_now);
             }
             if (skill_type == role_control.Skill_1_Data.skill_type)
             {
                 Skill_Data skill_data = role_control.Skill_1_Data;
                 blood_now -= role_control.Attack_Damage;
+                print(skill_type+" Skill_1:"+ role_control.Skill_1_Data.skill_type);
+                print(blood_now);
             }
 
             if (blood_now <= 0)
