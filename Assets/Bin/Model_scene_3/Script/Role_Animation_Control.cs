@@ -211,8 +211,35 @@ namespace Model_scene_3
             }
             else if(skill_Type == Skill_Type.Skill_C)
             {
-                return Instantiate(prefab,
-                direction_now.transform.position + direction_now.transform.rotation * prefab.transform.localPosition,Quaternion.identity);
+                GameObject new_skill;
+                if(direction_now == up)
+                {
+                    new_skill = Instantiate(prefab,
+                direction_now.transform.position,Quaternion.identity);
+                }
+                else if(direction_now == right_down || direction_now == left_down)
+                {
+                    new_skill = Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * new Vector3(1.8f, 0f, 0), Quaternion.identity);
+                }
+                else if (direction_now == down)
+                {
+                    new_skill = Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * new Vector3(1f, 0f, 0), Quaternion.identity);
+                }
+                else if(direction_now == left || direction_now == left_up)
+                {
+                    new_skill = Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * new Vector3(1.5f, 0.8f, 0), Quaternion.identity);
+                }
+                else
+                {
+                    new_skill = Instantiate(prefab,
+                direction_now.transform.position + direction_now.transform.rotation * prefab.transform.localPosition, Quaternion.identity);
+                }
+                
+
+                return new_skill;
             }
             else if (skill_Type == Skill_Type.Skill_D)
             {
