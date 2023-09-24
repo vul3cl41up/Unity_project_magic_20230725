@@ -25,10 +25,11 @@ namespace Model_scene_3
         EventSystem eventSystem;
         public GameObject selected;
 
-        int choose_count = 0;
+        int choose_count;
 
         private void Start()
         {
+            choose_count = 0;
             eventSystem = EventSystem.current;
 
             State_Data_Control.Copy_State_Data(current_state_data, init_state_data);
@@ -37,7 +38,7 @@ namespace Model_scene_3
             {
                 GameObject new_skill_slot= Instantiate(skill_slot, Vector3.zero, Quaternion.identity, skill_pool.transform);
                 new_skill_slot.GetComponent<Skill_Slot_Control>().skill_data = current_state_data.skill_pool.skill_list[i];
-                new_skill_slot.GetComponent<Image>().sprite = current_state_data.skill_pool.skill_list[i].skill_image;
+                //new_skill_slot.GetComponent<Image>().sprite = current_state_data.skill_pool.skill_list[i].skill_image;
                 if (i == 1) eventSystem.firstSelectedGameObject = new_skill_slot;
             }
         }
@@ -77,7 +78,7 @@ namespace Model_scene_3
             {
                 GameObject new_skill_selected_slot = Instantiate(skill_selected_slot, Vector3.zero, Quaternion.identity, skill_grid.transform);
                 new_skill_selected_slot.GetComponent<Skill_Slot_Control>().skill_data = selected.GetComponent<Skill_Slot_Control>().skill_data;
-                new_skill_selected_slot.GetComponent<Image>().sprite = selected.GetComponent<Skill_Slot_Control>().skill_data.skill_image;
+                //new_skill_selected_slot.GetComponent<Image>().sprite = selected.GetComponent<Skill_Slot_Control>().skill_data.skill_image;
                 selected.SetActive(false);
                 choose_count++;
             }
