@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: current_character_data
   m_EditorClassIdentifier: 
   blood: 100
-  blood_now: 0
+  blood_now: 10
   magic: 0
   magic_now: 0
   move_speed: 5
   attack_speed: 0
   attack_damage: 20
   common_attack: {fileID: 11400000, guid: 3bdb3b7bb04fa284abd5a5a3f27f4f46, type: 2}
-  skill_1: {fileID: 11400000, guid: 677570faeeb6c0c429f3d3a75dfda881, type: 2}
-  skill_2: {fileID: 11400000, guid: 9f24abd50321ac64fa37600097e52501, type: 2}
-  skill_3: {fileID: 11400000, guid: 9bb7fa40c95473c47a94fa9c25ac8b61, type: 2}
-  skill_4: {fileID: 11400000, guid: 5b98153a336853e4e8efa5d517505268, type: 2}
+  skill_1: {fileID: 11400000, guid: 9f24abd50321ac64fa37600097e52501, type: 2}
+  skill_2: {fileID: 11400000, guid: 9bb7fa40c95473c47a94fa9c25ac8b61, type: 2}
+  skill_3: {fileID: 11400000, guid: 5b98153a336853e4e8efa5d517505268, type: 2}
+  skill_4: {fileID: 11400000, guid: 677570faeeb6c0c429f3d3a75dfda881, type: 2}

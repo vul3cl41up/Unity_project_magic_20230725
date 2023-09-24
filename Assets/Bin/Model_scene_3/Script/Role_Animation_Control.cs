@@ -70,14 +70,14 @@ namespace Model_scene_3
             role_control.Skill_2_Received += On_Skill_2;
             role_control.Skill_3_Received += On_Skill_3;
             role_control.Skill_4_Received += On_Skill_4;
-            role_control.Take_Damage_Received += On_Take_Damage; 
+            //role_control.Take_Damage_Received += On_Take_Damage; 
             #endregion
         }
 
-        private void On_Take_Damage(object sender, EventArgs e)
+        /*private void On_Take_Damage(object sender, EventArgs e)
         {
             player_blood.fillAmount = role_control.Current_Character_Data.blood_now / role_control.Current_Character_Data.blood;
-        }
+        }*/
 
         private void Update()
         {

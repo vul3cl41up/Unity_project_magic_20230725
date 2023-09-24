@@ -12,7 +12,7 @@ namespace Model_scene_3
         //連同動畫控制
         private Animator animator;
         private Rigidbody2D m_rb2D;
-        public Image bloodImage;
+        //public Image bloodImage;
         public Enemy_Data this_enemy_data;
 
         private GameObject target;
@@ -120,15 +120,15 @@ namespace Model_scene_3
         protected virtual void Handle_Anim()
         {
             Flip();
-            bloodImage.fillAmount = blood_now / blood;
+            //bloodImage.fillAmount = blood_now / blood;
 
-            if (m_rb2D.velocity.magnitude > 0)
+            /*if (m_rb2D.velocity.magnitude > 0)
                 animator.SetInteger("AnimState", 1);
             else
                 animator.SetInteger("AnimState", 0);
 
             if (is_dead)
-                animator.SetTrigger("Dead");
+                animator.SetTrigger("Dead");*/
         }
 
         public void Take_Damage(Character_Data character_Data, Skill_Type skill_type)
