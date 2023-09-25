@@ -1,3 +1,5 @@
+﻿using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 namespace Model_scene_3
@@ -5,11 +7,21 @@ namespace Model_scene_3
     public class Enemy_Generate_Control : MonoBehaviour
     {
         private GameObject target;
-        [SerializeField, Header("Rino")]
-        private GameObject prefab_rino;
+        [SerializeField, Header("產生的怪物")]
+        private List<GameObject> prefab_List;
+        [SerializeField, Header("生成的時間")]
+        private float time;
+        [SerializeField, Header("生成的數量")]
+        private int number;
+        [Header("與角色的距離")]
+        [SerializeField]
+        private float from;
+        [SerializeField]
+        private float to;
+
 
         private float timer = 0;
-        private bool can_generated = true;
+        bool can_ganerate = true;
 
         private void Start()
         {
@@ -19,37 +31,32 @@ namespace Model_scene_3
         private void Update()
         {
             timer += Time.deltaTime;
-            transform.position = target.transform.position;
 
-            if(timer > 20)
+            if(timer >= time && can_ganerate)
             {
-                can_generated = true;
-                timer = 0;
+                for(int i = 0; i < prefab_List.Count; i++) 
+                {
+                    Enemy_Generate(prefab_List[i], number);
+                    can_ganerate = false;
+                    Destroy(gameObject);
+                }
+                
             }
-
-            if(can_generated) 
-            { 
-                First_Generate(); 
-                can_generated = false;
-            }
+                
 
         }
 
-        void First_Generate()
-        {
-            Enemy_Generate(prefab_rino, 10);
-        }
 
         void Enemy_Generate(GameObject prefab_enemy, int number)
         {
             for(int i = 0; i < number; i++)
             {
-                float x = Random.Range(0, 10);
-                if (x < 5) x -= 10;
-                float y = Random.Range(0, 10);
-                if (y < 5) y -= 10;
+                float x = Random.Range(0, to);
+                if (x < from) x -= to;
+                float y = Random.Range(0, to);
+                if (y < from) y -= to;
                 Vector3 enemy_position = new Vector3(x, y,0);
-                Instantiate(prefab_enemy, transform.position + enemy_position, Quaternion.identity);
+                Instantiate(prefab_enemy, target.transform.position + enemy_position, Quaternion.identity);
             }
             
 
