@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 namespace Model_scene_3
 {
@@ -38,10 +38,7 @@ namespace Model_scene_3
         }
 
         
-        protected void Long_Time()
-        {
-            Destroy(gameObject,3f);
-        }
+
 
         protected override IEnumerator Start_Attack(Collider2D collision)
         {

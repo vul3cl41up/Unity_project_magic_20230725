@@ -29,6 +29,11 @@ namespace Model_scene_3
             Destroy(gameObject);
         }
 
+        protected virtual void Long_Time()
+        {
+            Destroy(gameObject, 3f);
+        }
+
         protected virtual IEnumerator Start_Attack(Collider2D collision)
         {
             yield return new WaitForSeconds(0.2f);

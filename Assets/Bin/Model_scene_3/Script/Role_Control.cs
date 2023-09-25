@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -87,6 +88,9 @@ namespace Model_scene_3
             add { take_damage_received += value; }
             remove { take_damage_received -= value; }
         }
+        Transform HP_Canvas;
+        [SerializeField]
+        GameObject HP_Text;
         #endregion
         #endregion
 
@@ -97,6 +101,7 @@ namespace Model_scene_3
 
             Rb2D = GetComponent<Rigidbody2D>();
             Direction_Now = Direction.Right;
+            HP_Canvas = transform.GetChild(8);
 
             can_common_attack = true;
             common_attack_cool_time = Current_Character_Data.common_attack.cool_time;
@@ -179,6 +184,10 @@ namespace Model_scene_3
         {
             Current_Character_Data.blood_now -= enemy_Data.attack_damage;
             take_damage_received?.Invoke(this, EventArgs.Empty);
+
+            GameObject getDamage = Instantiate(HP_Text, HP_Canvas.position, Quaternion.identity, HP_Canvas);
+            getDamage.GetComponent<TMP_Text>().text = enemy_Data.attack_damage.ToString();
+            Destroy(getDamage, 1f);
         }
 
         void Common_Attack()

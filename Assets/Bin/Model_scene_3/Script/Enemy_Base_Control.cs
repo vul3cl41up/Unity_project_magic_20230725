@@ -1,4 +1,5 @@
 ﻿using Model_scene_1;
+using TMPro;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,10 @@ namespace Model_scene_3
         public Enemy_Data this_enemy_data;
 
         private GameObject target;
+
+        Transform HP_Canvas;
+        [SerializeField]
+        GameObject HP_Text;
 
 
         private float blood;
@@ -40,6 +45,7 @@ namespace Model_scene_3
             animator = GetComponent<Animator>();
             m_rb2D = GetComponent<Rigidbody2D>();
             target = GameObject.FindWithTag("Player");
+            HP_Canvas = transform.GetChild(0);
 
 
             Init_Data();
@@ -166,27 +172,32 @@ namespace Model_scene_3
         }
         protected virtual void Damage_Deal(Character_Data character_data, Skill_Data skill_data)
         {
-
+            float damage = 0;
             if (skill_data.skill_type == Skill_Type.Common_Attack)
             {
-                blood_now -= character_data.attack_damage;
+                damage  = character_data.attack_damage;
             }
             else if(skill_data.skill_type == Skill_Type.Skill_A)
             {
-                blood_now -= character_data.attack_damage;
+                damage = character_data.attack_damage;
             }
             else if (skill_data.skill_type == Skill_Type.Skill_B)
             {
-                blood_now -= character_data.attack_damage;
+                damage = character_data.attack_damage;
             }
             else if (skill_data.skill_type == Skill_Type.Skill_C)
             {
-                blood_now -= character_data.attack_damage;
+                damage = character_data.attack_damage;
             }
             else if (skill_data.skill_type == Skill_Type.Skill_D)
             {
-                blood_now -= character_data.attack_damage;
+                damage = character_data.attack_damage;
             }
+
+            blood_now -= damage;
+            GameObject getDamage = Instantiate(HP_Text, HP_Canvas.position, Quaternion.identity, HP_Canvas);
+            getDamage.GetComponent<TMP_Text>().text = damage.ToString();
+            Destroy(getDamage, 1f);
 
         }
 

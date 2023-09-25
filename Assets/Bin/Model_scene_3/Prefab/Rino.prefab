@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -105541197
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1075854790282143660, guid: e3531be27cb827743bac8ea66dae5bfd,
     type: 3}
   m_Color: {r: 0.3679245, g: 0.1440459, b: 0.1440459, a: 1}
@@ -195,7 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07187d6a46222d243b860ea71e12e998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodImage: {fileID: 5269571463905934643}
   this_enemy_data: {fileID: 11400000, guid: b2987b0d6cbf93c46bec9c3af05164ac, type: 2}
 --- !u!1 &4627016758196228074
 GameObject:
