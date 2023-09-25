@@ -8,6 +8,7 @@ namespace Model_scene_3
 {
     public class Enemy_Base_Control : MonoBehaviour
     {
+        public static int Enemy_Number = 0;
         //載入怪物資料
         //怪物的基礎功能，移動、人物碰到會造成傷害、怪物碰到攻擊會受傷
         //連同動畫控制
@@ -39,6 +40,14 @@ namespace Model_scene_3
 
         int count = 50;
 
+        private void OnEnable()
+        {
+            Enemy_Number++;
+        }
+        private void OnDestroy()
+        {
+            Enemy_Number--;
+        }
 
         private void Start()
         {

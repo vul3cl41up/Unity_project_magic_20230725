@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fungus;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -22,6 +23,9 @@ namespace Model_scene_3
         private State_Data current_state_data;
         [SerializeField]
         private State_Data saved_state_data;
+        [SerializeField, Header("對話管理")]
+        private Flowchart fungusGM;
+
 
         public Character_Data Current_Character_Data { get; private set; }
 
@@ -31,8 +35,8 @@ namespace Model_scene_3
         #endregion
 
         #region 攻擊參數
-        private EventHandler common_attack_received;
-        public event EventHandler Common_Attack_Received
+        private System.EventHandler common_attack_received;
+        public event System.EventHandler Common_Attack_Received
         {
             add { common_attack_received += value; }
             remove { common_attack_received -= value; }
@@ -40,8 +44,8 @@ namespace Model_scene_3
         private bool can_common_attack;
         float common_attack_cool_time;
         float common_attack_cool_timer;
-        private EventHandler skill_1_received;
-        public event EventHandler Skill_1_Received
+        private System.EventHandler skill_1_received;
+        public event System.EventHandler Skill_1_Received
         {
             add { skill_1_received += value; }
             remove { skill_1_received -= value; }
@@ -50,8 +54,8 @@ namespace Model_scene_3
         float skill_1_cool_time;
         float skill_1_cool_timer;
 
-        private EventHandler skill_2_received;
-        public event EventHandler Skill_2_Received
+        private System.EventHandler skill_2_received;
+        public event System.EventHandler Skill_2_Received
         {
             add { skill_2_received += value; }
             remove { skill_2_received -= value; }
@@ -60,8 +64,8 @@ namespace Model_scene_3
         float skill_2_cool_time;
         float skill_2_cool_timer;
 
-        private EventHandler skill_3_received;
-        public event EventHandler Skill_3_Received
+        private System.EventHandler skill_3_received;
+        public event System.EventHandler Skill_3_Received
         {
             add { skill_3_received += value; }
             remove { skill_3_received -= value; }
@@ -70,8 +74,8 @@ namespace Model_scene_3
         float skill_3_cool_time;
         float skill_3_cool_timer;
 
-        private EventHandler skill_4_received;
-        public event EventHandler Skill_4_Received
+        private System.EventHandler skill_4_received;
+        public event System.EventHandler Skill_4_Received
         {
             add { skill_4_received += value; }
             remove { skill_4_received -= value; }
@@ -82,8 +86,8 @@ namespace Model_scene_3
         #endregion
 
         #region 受傷與死亡參數
-        private EventHandler take_damage_received;
-        public event EventHandler Take_Damage_Received
+        private System.EventHandler take_damage_received;
+        public event System.EventHandler Take_Damage_Received
         {
             add { take_damage_received += value; }
             remove { take_damage_received -= value; }
@@ -188,6 +192,12 @@ namespace Model_scene_3
             GameObject getDamage = Instantiate(HP_Text, HP_Canvas.position, Quaternion.identity, HP_Canvas);
             getDamage.GetComponent<TMP_Text>().text = enemy_Data.attack_damage.ToString();
             Destroy(getDamage, 1f);
+
+            if(Current_Character_Data.blood_now <= 0)
+            {
+                Rb2D.velocity = Vector3.zero;
+                fungusGM.SendFungusMessage("遊戲失敗");
+            }
         }
 
         void Common_Attack()
