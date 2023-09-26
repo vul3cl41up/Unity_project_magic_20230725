@@ -1,6 +1,4 @@
-
-using UnityEditor.MPE;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Model_scene_3
 {

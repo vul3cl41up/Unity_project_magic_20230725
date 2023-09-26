@@ -1,6 +1,5 @@
 ﻿using Model_scene_1;
 using TMPro;
-using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.UI;
 
