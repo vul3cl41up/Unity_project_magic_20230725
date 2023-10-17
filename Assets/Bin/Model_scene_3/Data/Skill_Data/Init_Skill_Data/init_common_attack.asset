@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill_type: 0
   skill_name: "\u666E\u901A\u653B\u64CA"
-  skill_description: "\u7269\u7406\u653B\u64CA\n123\n123\n123"
+  skill_description: "\u7269\u7406\u653B\u64CA"
   skill_image: {fileID: 7482667652216324306, guid: 4a4750e1721094c4a8ec684f097a5786,
     type: 3}
   cool_time: 0.6

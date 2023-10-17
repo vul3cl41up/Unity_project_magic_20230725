@@ -13,8 +13,6 @@ namespace Model_scene_3
         GameObject skill_3_prefab;
         GameObject skill_4_prefab;
         SpriteRenderer sprite_renderer;
-        [SerializeField]
-        private Image player_blood;
 
         GameObject up;SpriteRenderer up_sprite_renderer;
         GameObject left_up;SpriteRenderer left_up_sprite_renderer;

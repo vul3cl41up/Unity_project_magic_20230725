@@ -132,7 +132,7 @@ namespace Model_scene_3
             Skill_1();
             Skill_2();
             Skill_3();
-            Skill_4();
+            //Skill_4();
         }
         private void FixedUpdate()
         {
@@ -202,56 +202,58 @@ namespace Model_scene_3
         void Common_Attack()
         {
             common_attack_cool_timer += Time.deltaTime;
-            if(Input.GetButtonDown("Common_Attack") && can_common_attack)
+            if (common_attack_cool_timer >= common_attack_cool_time)
+            {
+                can_common_attack = true;
+                common_attack_cool_timer = 0;
+            }
+            if (Input.GetButtonDown("Common_Attack") && can_common_attack)
             {
                 print($"使用{current_state_data.character_data.common_attack.skill_name}");
                 can_common_attack = false;
                 common_attack_received?.Invoke(this, EventArgs.Empty);
-            }
-
-            if(common_attack_cool_timer >= common_attack_cool_time)
-            {
-                can_common_attack = true;
-                common_attack_cool_timer = 0;
             }
         }
 
         void Skill_1()
         {
             skill_1_cool_timer += Time.deltaTime;
-            if(Input.GetButtonDown("Skill1") && can_skill_1)
+            if (skill_1_cool_timer >= skill_1_cool_time)
+            {
+                can_skill_1 = true;
+                skill_1_cool_timer = 0;
+            }
+            if (Input.GetButtonDown("Skill1") && can_skill_1)
             {
                 print($"使用{current_state_data.character_data.skill_1.skill_name}技能");
                 can_skill_1 = false;
                 skill_1_received?.Invoke(this, EventArgs.Empty);
             }
 
-            if (skill_1_cool_timer >= skill_1_cool_time)
-            {
-                can_skill_1 = true;
-                skill_1_cool_timer = 0;
-            }
-
         }
         void Skill_2()
         {
             skill_2_cool_timer += Time.deltaTime;
+            if (skill_2_cool_timer >= skill_2_cool_time)
+            {
+                can_skill_2 = true;
+                skill_2_cool_timer = 0;
+            }
             if (Input.GetButtonDown("Skill2") && can_skill_2)
             {
                 print($"使用{current_state_data.character_data.skill_2.skill_name}技能");
                 can_skill_2 = false;
                 skill_2_received?.Invoke(this, EventArgs.Empty);
             }
-
-            if (skill_2_cool_timer >= skill_2_cool_time)
-            {
-                can_skill_2 = true;
-                skill_2_cool_timer = 0;
-            }
         }
         void Skill_3()
         {
             skill_3_cool_timer += Time.deltaTime;
+            if (skill_3_cool_timer >= skill_3_cool_time)
+            {
+                can_skill_3 = true;
+                skill_3_cool_timer = 0;
+            }
             if (Input.GetButtonDown("Skill3") && can_skill_3)
             {
                 print($"使用{current_state_data.character_data.skill_3.skill_name}技能");
@@ -259,13 +261,8 @@ namespace Model_scene_3
                 skill_3_received?.Invoke(this, EventArgs.Empty);
             }
 
-            if (skill_3_cool_timer >= skill_3_cool_time)
-            {
-                can_skill_3 = true;
-                skill_3_cool_timer = 0;
-            }
         }
-        void Skill_4()
+        /*void Skill_4()
         {
             skill_4_cool_timer += Time.deltaTime;
             if (Input.GetButtonDown("Skill4") && can_skill_4)
@@ -280,6 +277,6 @@ namespace Model_scene_3
                 can_skill_4 = true;
                 skill_4_cool_timer = 0;
             }
-        }
+        }*/
     }
 }

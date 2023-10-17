@@ -1518,8 +1518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -196, y: 306}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: -160, y: 306}
+  m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074155937
 MonoBehaviour:
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u4E0A\u4E0B\u5DE6\u53F3\u79FB\u52D5\uFF0Cz\u9078\u53D6"
+  m_text: "\u4E0A\u4E0B\u5DE6\u53F3\u9375\u79FB\u52D5\uFF0Cz\u9375\u9078\u53D6\uFF0C\u8ACB\u9078\u53D63\u500B\u6280\u80FD"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bee8933bbf2881c42a65a24115b4d1c6, type: 2}
   m_sharedMaterial: {fileID: 7644205795022825078, guid: bee8933bbf2881c42a65a24115b4d1c6,
@@ -3272,7 +3272,7 @@ GameObject:
   - component: {fileID: 1840869441}
   - component: {fileID: 1840869440}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

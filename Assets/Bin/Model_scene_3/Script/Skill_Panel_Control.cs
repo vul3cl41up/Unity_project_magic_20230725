@@ -74,7 +74,7 @@ namespace Model_scene_3
 
         public void Choose()
         {
-            if (Input.GetButtonDown("Submit") && selected.CompareTag("Skill_button") && choose_count <= 4)
+            if (Input.GetButtonDown("Submit") && selected.CompareTag("Skill_button") && choose_count <= 2)
             {
                 GameObject new_skill_selected_slot = Instantiate(skill_selected_slot, Vector3.zero, Quaternion.identity, skill_grid.transform);
                 new_skill_selected_slot.GetComponent<Skill_Slot_Control>().skill_data = selected.GetComponent<Skill_Slot_Control>().skill_data;
@@ -106,12 +106,12 @@ namespace Model_scene_3
 
         public void StartGame()
         {
-            if(choose_count == 4)
+            if(choose_count == 3)
             {
                 current_state_data.character_data.skill_1 = skill_grid.transform.GetChild(1).gameObject.GetComponent<Skill_Slot_Control>().skill_data;
                 current_state_data.character_data.skill_2 = skill_grid.transform.GetChild(2).gameObject.GetComponent<Skill_Slot_Control>().skill_data;
                 current_state_data.character_data.skill_3 = skill_grid.transform.GetChild(3).gameObject.GetComponent<Skill_Slot_Control>().skill_data;
-                current_state_data.character_data.skill_4 = skill_grid.transform.GetChild(4).gameObject.GetComponent<Skill_Slot_Control>().skill_data;
+                //current_state_data.character_data.skill_4 = skill_grid.transform.GetChild(4).gameObject.GetComponent<Skill_Slot_Control>().skill_data;
                 Scene_control.Model_3_Scene();
             }
         }    
