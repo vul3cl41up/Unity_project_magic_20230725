@@ -584,8 +584,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8956358764909558203}
   - {fileID: 6345933710987001682}
+  - {fileID: 8956358764909558203}
   - {fileID: 5961534093447933447}
   - {fileID: 2752959593471657367}
   - {fileID: 1095384530295578806}
@@ -4299,7 +4299,7 @@ PrefabInstance:
     - target: {fileID: 5957429885155295366, guid: 7ef3178e784e638479a504349bfbe65c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 5957429885155295366, guid: 7ef3178e784e638479a504349bfbe65c,
         type: 3}

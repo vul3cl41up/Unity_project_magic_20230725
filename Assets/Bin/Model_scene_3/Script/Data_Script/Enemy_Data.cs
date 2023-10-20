@@ -12,6 +12,7 @@ namespace Model_scene_3
         public float attack_speed;
 
         public float attack_damage;
+        public float exp;
 
     }
 }

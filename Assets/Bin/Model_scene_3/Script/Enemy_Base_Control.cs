@@ -174,10 +174,17 @@ namespace Model_scene_3
 
             if (blood_now <= 0)
             {
-                Destroy(gameObject);
+                Dead();
             }
 
         }
+
+        protected void Dead()
+        {
+            target.GetComponent<Upgrade_System>().Get_exp(this_enemy_data.exp);
+            Destroy(gameObject);
+        }
+
         protected virtual void Damage_Deal(Character_Data character_data, Skill_Data skill_data)
         {
             float damage = 0;

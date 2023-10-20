@@ -16,3 +16,4 @@ MonoBehaviour:
   move_speed: 3
   attack_speed: 5
   attack_damage: 5
+  exp: 20
