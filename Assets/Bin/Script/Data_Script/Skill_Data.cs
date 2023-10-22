@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace magic
@@ -12,6 +13,11 @@ namespace magic
         public float cool_time;
         public float skill_damage;
         public GameObject skill_prefab;
+        public int skill_level;
+        public List<float> cool_time_List;
+        public List<float> skill_damage_List;
+        [TextArea]
+        public List<string> skill_upgrade_description;
     }
 }
 

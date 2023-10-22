@@ -19,3 +19,22 @@ MonoBehaviour:
   skill_damage: 10
   skill_prefab: {fileID: 8160301142999443678, guid: 078ad8012f2f8c04c85d5e70a747dbfc,
     type: 3}
+  skill_level: 0
+  cool_time_List:
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  skill_damage_List:
+  - 10
+  - 0
+  - 0
+  - 0
+  - 0
+  skill_upgrade_description:
+  - "Lv1 \u2192 Lv2\ncool time: 1\u21920.9\ndamage: 10\u219212"
+  - 
+  - 
+  - 
+  - 

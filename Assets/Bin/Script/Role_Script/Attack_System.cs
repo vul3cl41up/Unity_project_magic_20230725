@@ -50,8 +50,6 @@ public class Attack_System : MonoBehaviour
 
         if (role_control.role_data.common_attack != null)
             common_attack_timer = role_control.role_data.common_attack.cool_time;
-        else
-            print("error");
         if (role_control.role_data.skill_1 != null)
             skill_1_timer = role_control.role_data.skill_1.cool_time;
         if (role_control.role_data.skill_2 != null)

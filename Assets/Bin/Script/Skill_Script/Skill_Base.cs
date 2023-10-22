@@ -28,6 +28,7 @@ namespace magic
         protected virtual IEnumerator Start_Attack(Collider2D collision)
         {
             yield return new WaitForSeconds(0.2f);
+            if(collision)collision.GetComponent<Enemy_Base>().Take_Damage(skill_data.skill_damage);
         }
     }
 

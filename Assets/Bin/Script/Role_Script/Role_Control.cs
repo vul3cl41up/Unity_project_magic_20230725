@@ -20,8 +20,8 @@ namespace magic
         private SpriteRenderer sprite_renderer;
         public Vector2 move_input { get; private set; }
 
-        private float hpMax;
-        private float hp;
+        public float hpMax { get; private set; }
+        public float hp { get; private set; }
         #endregion
 
         private void Start()
@@ -54,9 +54,12 @@ namespace magic
 
         public void Take_Attack(float damage)
         {
-            hp -= damage;
-            InjuriedAnimation(damage);
-            if(hp <= 0)
+            if(hp > 0)
+            {
+                hp -= damage;
+                InjuriedAnimation(damage);
+            }
+            else
             {
                 Dead();
             }
@@ -66,7 +69,11 @@ namespace magic
         {
             rb.velocity = Vector3.zero;
             DeadAnimation();
-            gameObject.SetActive(false);
+            enabled = false;
+            for(int i = 0;  i < transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
         }
         void DeadAnimation()
         {

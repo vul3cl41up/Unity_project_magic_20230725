@@ -35,7 +35,7 @@ namespace magic
         {
             if(!comeback)
             {
-                transform.localPosition += new Vector3(speed * Time.fixedDeltaTime, 0, 0);
+                transform.position += transform.rotation * new Vector3(speed * Time.fixedDeltaTime, 0, 0);
                 distance += speed * Time.fixedDeltaTime;
                 if(distance >= 8f)
                     comeback = true;
