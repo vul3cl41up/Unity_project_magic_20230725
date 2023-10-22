@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 7077127357966910616}
   - component: {fileID: 5289430676387855833}
   - component: {fileID: 1863592224066811056}
+  - component: {fileID: 8909255888613063587}
   m_Layer: 7
   m_Name: Role
   m_TagString: Player
@@ -482,7 +483,7 @@ Transform:
   - {fileID: 3012121751065472381}
   - {fileID: 5100550381578021216}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &87395708220822488
 SpriteRenderer:
@@ -548,7 +549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90882ed924dafc54a8937557d1fc03c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_blood: {fileID: 0}
 --- !u!114 &9186661380333214343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +648,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8909255888613063587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575585437865386985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573c7f5c435562c4b9652569fccbce4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  need_exp:
+  - 100
+  - 200
+  - 400
+  - 800
+  - 1600
+  text_level: {fileID: 0}
+  object_exp: {fileID: 0}
 --- !u!1 &5145040665000618253
 GameObject:
   m_ObjectHideFlags: 0
