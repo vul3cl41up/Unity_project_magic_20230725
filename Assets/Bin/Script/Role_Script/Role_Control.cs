@@ -14,7 +14,7 @@ namespace magic
         Transform role_canvas;
         [SerializeField, Header("受傷血量預置物")]
         GameObject damage_text;
-        public Role_Data role_data { get; private set; }
+
         private Rigidbody2D rb;
         private Animator animator;
         private SpriteRenderer sprite_renderer;
@@ -22,6 +22,9 @@ namespace magic
 
         public float hpMax { get; private set; }
         public float hp { get; private set; }
+        private float move_speed;
+
+        bool is_dead = false;
         #endregion
 
         private void Start()
@@ -29,10 +32,11 @@ namespace magic
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             sprite_renderer = GetComponent<SpriteRenderer>();
-            role_data = role_data_file;
-
-            hpMax = role_data.Hp;
+            hpMax = role_data_file.Hp;
             hp = hpMax;
+            move_speed = role_data_file.move_speed;
+
+            Init_Skill();
         }
         private void Update()
         {
@@ -49,25 +53,46 @@ namespace magic
             move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
             //標準化讓各方向移動數值相同
             move_input = move_input.normalized;
-            rb.velocity = move_input * role_data.move_speed;
+            rb.velocity = move_input * move_speed;
+        }
+
+        void Init_Skill()
+        {
+            Skill_Data common_attack = role_data_file.common_attack;
+            common_attack.skill_level = 0;
+            common_attack.cool_time = common_attack.cool_time_List[0];
+            common_attack.skill_damage = common_attack.skill_damage_List[0];
+
+            Skill_Data skill_1 = role_data_file.skill_1;
+            skill_1.skill_level = 0;
+            skill_1.cool_time = skill_1.cool_time_List[0];
+            skill_1.skill_damage = skill_1.skill_damage_List[0];
+
+            Skill_Data skill_2 = role_data_file.skill_2;
+            skill_2.skill_level = 0;
+            skill_2.cool_time = skill_2.cool_time_List[0];
+            skill_2.skill_damage = skill_2.skill_damage_List[0];
+
+            Skill_Data skill_3 = role_data_file.skill_3;
+            skill_3.skill_level = 0;
+            skill_3.cool_time = skill_3.cool_time_List[0];
+            skill_3.skill_damage = skill_3.skill_damage_List[0];
         }
 
         public void Take_Attack(float damage)
         {
-            if(hp > 0)
+            if (!is_dead)
             {
                 hp -= damage;
                 InjuriedAnimation(damage);
+                if (hp <= 0)
+                    Dead();
             }
-            else
-            {
-                Dead();
-            }
-
         }
         void Dead()
         {
             rb.velocity = Vector3.zero;
+            is_dead = true;
             DeadAnimation();
             enabled = false;
             for(int i = 0;  i < transform.childCount; i++)

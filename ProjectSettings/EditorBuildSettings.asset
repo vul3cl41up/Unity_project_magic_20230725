@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Bin/Model_scene_3/Scene/Select_scene.unity
     guid: 8525571fb193bde449cc82cf40164850
   - enabled: 1
-    path: Assets/Bin/Model_scene_3/Scene/Skill_select_scene.unity
-    guid: 1e2bc85aeeaa3f145a01ab88f1e81337
+    path: Assets/Bin/Scene/skill_select_scene.unity
+    guid: 62fce2f7c4f578c4aab2279eea1d8568
   - enabled: 1
-    path: Assets/Bin/Model_scene_3/Scene/Model_scene_3.unity
-    guid: 4dcb8d1e08b4ec44cb04ac9be2c954cc
+    path: Assets/Bin/Scene/map_1_scene.unity
+    guid: d6a7c6dd18c983744957cb663335f463
   m_configObjects: {}

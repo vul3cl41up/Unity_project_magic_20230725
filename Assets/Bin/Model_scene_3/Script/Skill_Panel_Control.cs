@@ -69,7 +69,6 @@ namespace Model_scene_3
                 title.text = selected_skill_data.skill_name;
                 description.text = selected_skill_data.skill_description;
             }
-
         }
 
         public void Choose()
@@ -82,7 +81,6 @@ namespace Model_scene_3
                 selected.SetActive(false);
                 choose_count++;
             }
-            
         }
 
         public void Cancel()

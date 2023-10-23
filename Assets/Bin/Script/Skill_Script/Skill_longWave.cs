@@ -4,9 +4,9 @@ namespace magic
     public class Skill_longWave : Skill_Base
     {
         [SerializeField, Header("持續時間")]
-        private float duration = 3f;
+        private float duration = 2f;
         [SerializeField, Header("攻擊間隔")]
-        private float interval = 0.4f;
+        private float interval = 0.1f;
 
         bool can_attack = false;
         float attack_timer = 0f;

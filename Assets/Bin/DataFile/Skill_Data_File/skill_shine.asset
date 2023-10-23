@@ -13,28 +13,27 @@ MonoBehaviour:
   m_Name: skill_shine
   m_EditorClassIdentifier: 
   skill_type: 1
-  skill_name: 
-  skill_description: 
-  cool_time: 3
+  skill_name: "\u96F7\u5C04\u7206\u70B8"
+  skill_description: "\u96F7\u5C04\u7206\u70B8"
+  cool_time: 1
   skill_damage: 10
   skill_prefab: {fileID: 1154384980027437357, guid: f849af4c44a60b1428e765afa10a74b6,
     type: 3}
-  skill_level: 0
+  skill_level: 3
   cool_time_List:
   - 1
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.9
+  - 0.8
+  - 0.7
+  - 0.6
   skill_damage_List:
   - 10
-  - 0
-  - 0
-  - 0
-  - 0
+  - 12
+  - 14
+  - 16
+  - 18
   skill_upgrade_description:
   - "Lv1 \u2192 Lv2\ncool time: 1\u21920.9\ndamage: 10\u219212"
-  - 
-  - 
-  - 
-  - 
+  - "Lv2 \u2192 Lv3\ncool time: 0.9\u21920.8\ndamage: 12\u219214"
+  - "Lv3 \u2192 Lv4\ncool time: 0.8\u21920.7\ndamage: 14\u219216"
+  - "Lv4 \u2192 Lv5\ncool time: 0.7\u21920.6\ndamage: 16\u219218"

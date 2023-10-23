@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8123f1e219b5d04c884161dcdccb0c8, type: 3}
-  m_Name: skill_boomerang
+  m_Name: skill_horn
   m_EditorClassIdentifier: 
-  skill_type: 2
-  skill_name: "\u56DE\u529B\u93E2"
-  skill_description: "\u56DE\u529B\u93E2"
+  skill_type: 3
+  skill_name: "\u60E1\u9B54\u89D2"
+  skill_description: "\u60E1\u9B54\u89D2"
   cool_time: 1
   skill_damage: 10
-  skill_prefab: {fileID: 2530809737362933386, guid: 53f1552fc0d2e3742904b9bd5902122f,
+  skill_prefab: {fileID: 655736433692438864, guid: c42637a4aadd36f4aa2fa574d819d359,
     type: 3}
-  skill_level: 0
+  skill_level: 2
   cool_time_List:
   - 1
   - 0.9

@@ -10,31 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8123f1e219b5d04c884161dcdccb0c8, type: 3}
-  m_Name: skill_C
+  m_Name: skill_icicle
   m_EditorClassIdentifier: 
-  skill_type: 3
-  skill_name: 
-  skill_description: 
-  cool_time: 3
+  skill_type: 4
+  skill_name: "\u51B0\u9310"
+  skill_description: "\u51B0\u9310"
+  cool_time: 1
   skill_damage: 10
-  skill_prefab: {fileID: 1228980292945667262, guid: 177e27bccec76144a85e4d5f144d5ff6,
+  skill_prefab: {fileID: 4182120332616285718, guid: 0344d4d1a8a50ac4d8948c155738f183,
     type: 3}
   skill_level: 0
   cool_time_List:
   - 1
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.9
+  - 0.8
+  - 0.7
+  - 0.6
   skill_damage_List:
   - 10
-  - 0
-  - 0
-  - 0
-  - 0
+  - 12
+  - 14
+  - 16
+  - 18
   skill_upgrade_description:
   - "Lv1 \u2192 Lv2\ncool time: 1\u21920.9\ndamage: 10\u219212"
-  - 
-  - 
-  - 
-  - 
+  - "Lv2 \u2192 Lv3\ncool time: 0.9\u21920.8\ndamage: 12\u219214"
+  - "Lv3 \u2192 Lv4\ncool time: 0.8\u21920.7\ndamage: 14\u219216"
+  - "Lv4 \u2192 Lv5\ncool time: 0.7\u21920.6\ndamage: 16\u219218"

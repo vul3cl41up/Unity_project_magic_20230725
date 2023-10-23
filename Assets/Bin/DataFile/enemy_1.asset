@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ae78cbeacea3b4baf537f71c23ec71, type: 3}
   m_Name: enemy_1
   m_EditorClassIdentifier: 
-  Hp: 50
+  Hp: 40
   move_speed: 3
-  attack_damage: 10
-  exp: 50
+  attack_damage: 4
+  exp: 4
   attack_cool_time: 0.5

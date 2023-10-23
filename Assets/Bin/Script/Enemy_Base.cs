@@ -25,6 +25,7 @@ namespace magic
 
         int flip_delay = 50;
         int count = 0;
+        bool is_dead = false;
 
         private void Start()
         {
@@ -70,17 +71,22 @@ namespace magic
 
         public void Take_Damage(float damage)
         {
-            hp -= damage;
-            GameObject getDamage = Instantiate(HP_Canvas, transform.position, Quaternion.identity);
-            getDamage.GetComponentInChildren<TextMeshProUGUI>().text = damage.ToString();
-            Destroy(getDamage, 1f);
-            if (hp <= 0)
+            if(!is_dead)
             {
-                Dead();
+                hp -= damage;
+                GameObject getDamage = Instantiate(HP_Canvas, transform.position, Quaternion.identity);
+                getDamage.GetComponentInChildren<TextMeshProUGUI>().text = damage.ToString();
+                Destroy(getDamage, 1f);
+                if (hp <= 0)
+                {
+                    Dead();
+                }
             }
+            
         }
         protected void Dead()
         {
+            is_dead = true;
             target.GetComponent<Upgrade_System>().Get_Exp(enemy_data.exp);
             Destroy(gameObject);
         }

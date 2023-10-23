@@ -69,7 +69,7 @@ MonoBehaviour:
   m_text: "\u666E\u901A\u653B\u64CA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bee8933bbf2881c42a65a24115b4d1c6, type: 2}
-  m_sharedMaterial: {fileID: 7644205795022825078, guid: bee8933bbf2881c42a65a24115b4d1c6,
+  m_sharedMaterial: {fileID: 6425202762851365214, guid: bee8933bbf2881c42a65a24115b4d1c6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -148,9 +148,10 @@ GameObject:
   - component: {fileID: 6678188818631728154}
   - component: {fileID: 966903116267860715}
   - component: {fileID: 7117716873286258544}
+  - component: {fileID: 8844704632832231889}
   m_Layer: 5
   m_Name: skill_upgrade_slot
-  m_TagString: Untagged
+  m_TagString: Skill_button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,8 +238,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.43137255, b: 0.43137255, a: 1}
+    m_PressedColor: {r: 1, g: 0.43137255, b: 0.43137255, a: 1}
     m_SelectedColor: {r: 1, g: 0.43081754, b: 0.43081754, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -259,6 +260,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8844704632832231889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299301412367622096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f0b4fa6a18291449e971e8bc9fb690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill_data: {fileID: 0}
 --- !u!1 &8530014788201667788
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +342,7 @@ MonoBehaviour:
   m_text: "\u666E\u901A\u653B\u64CA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bee8933bbf2881c42a65a24115b4d1c6, type: 2}
-  m_sharedMaterial: {fileID: 7644205795022825078, guid: bee8933bbf2881c42a65a24115b4d1c6,
+  m_sharedMaterial: {fileID: 6425202762851365214, guid: bee8933bbf2881c42a65a24115b4d1c6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

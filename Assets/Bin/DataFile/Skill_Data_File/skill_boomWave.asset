@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8123f1e219b5d04c884161dcdccb0c8, type: 3}
-  m_Name: skill_boomerang
+  m_Name: skill_boomWave
   m_EditorClassIdentifier: 
   skill_type: 2
-  skill_name: "\u56DE\u529B\u93E2"
-  skill_description: "\u56DE\u529B\u93E2"
+  skill_name: "\u885D\u64CA\u6CE2"
+  skill_description: "\u885D\u64CA\u6CE2"
   cool_time: 1
   skill_damage: 10
-  skill_prefab: {fileID: 2530809737362933386, guid: 53f1552fc0d2e3742904b9bd5902122f,
+  skill_prefab: {fileID: 3938240151171136593, guid: 201cc29719ac2dd468142221e35b7c1d,
     type: 3}
   skill_level: 0
   cool_time_List:

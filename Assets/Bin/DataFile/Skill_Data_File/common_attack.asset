@@ -19,7 +19,7 @@ MonoBehaviour:
   skill_damage: 10
   skill_prefab: {fileID: 1661981334750456746, guid: 42de36956f688504cb6c400dec1e1f60,
     type: 3}
-  skill_level: 0
+  skill_level: 1
   cool_time_List:
   - 1
   - 0.9
@@ -37,4 +37,3 @@ MonoBehaviour:
   - "Lv2 \u2192 Lv3\ncool time: 0.9\u21920.8\ndamage: 12\u219214"
   - "Lv3 \u2192 Lv4\ncool time: 0.8\u21920.7\ndamage: 14\u219216"
   - "Lv4 \u2192 Lv5\ncool time: 0.7\u21920.6\ndamage: 16\u219218"
-  - 

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bd6ca0137ca0146a7f4e8ec878fd12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill_data: {fileID: 0}
+  skill_data: {fileID: 11400000, guid: feee454e6e873ac46b43a94b962aaf92, type: 2}
   duration: 3
   interval: 0.4
 --- !u!61 &3998997617150298093

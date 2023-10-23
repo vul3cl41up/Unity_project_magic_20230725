@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcfeefab35b72d4396886aa0dbc8c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill_data: {fileID: 0}
-  chain_probability: 0.3
+  skill_data: {fileID: 11400000, guid: fffc7c39fa704984db0154e8cf24eb62, type: 2}
   icicle_prefab: {fileID: 4182120332616285718}
+  times: 2

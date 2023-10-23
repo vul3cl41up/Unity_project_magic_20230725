@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7da0bb2cf5f9941965bd0a1076a92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill_data: {fileID: 0}
+  skill_data: {fileID: 11400000, guid: 777c1f71febafb44f87d6a88015bbbf9, type: 2}
   hit_prefab: {fileID: 4212490071493504096, guid: efb3e78212729114f87860280fb74359,
     type: 3}

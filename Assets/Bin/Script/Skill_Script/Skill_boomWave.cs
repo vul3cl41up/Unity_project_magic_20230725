@@ -10,15 +10,15 @@ namespace magic
 
         protected override IEnumerator Start_Attack(Collider2D collision)
         {
-            yield return base.Start_Attack(collision);
-            if (collision.CompareTag("Enemy"))
+            if (collision)
             {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.2f);
                 Vector3 touch_point = collision.transform.position;
                 touch_point.y = (collision.transform.position.y + transform.position.y) / 2;
                 Instantiate(hit_prefab, touch_point, Quaternion.identity);
-                print("hit");
+                collision.GetComponent<Enemy_Base>().Take_Damage(skill_data.skill_damage);
             }
+                
         }
     }
 }

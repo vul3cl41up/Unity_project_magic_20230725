@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1303063786162496886}
   - component: {fileID: 6143776723123146715}
   - component: {fileID: 8925965094763019714}
-  - component: {fileID: 7719518476076376781}
+  - component: {fileID: -9203873136286833149}
   m_Layer: 0
   m_Name: horn
   m_TagString: Untagged
@@ -153,7 +153,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.69059885, y: 1.7412148}
   m_EdgeRadius: 0
---- !u!114 &7719518476076376781
+--- !u!114 &-9203873136286833149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2466400744536988871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463e9fad25637d845935dabcd6934dbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 825ee9d19080e21489524c32be8838fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill_data: {fileID: 0}
+  skill_data: {fileID: 11400000, guid: 14f312c6259a4644d831151bfce0e3d0, type: 2}

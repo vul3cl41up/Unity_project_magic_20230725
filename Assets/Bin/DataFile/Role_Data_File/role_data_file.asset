@@ -15,6 +15,6 @@ MonoBehaviour:
   move_speed: 5
   Hp: 100
   common_attack: {fileID: 11400000, guid: f1cacd4f8e5d7ca4ca1a489e6246b838, type: 2}
-  skill_1: {fileID: 11400000, guid: 0d61d2eff433a0f43a6b2af29c9a5ff4, type: 2}
+  skill_1: {fileID: 11400000, guid: 1c5c1ce1c96813248b4a405a3c082a4f, type: 2}
   skill_2: {fileID: 11400000, guid: 022980fd79c49af4c8557270654e47e6, type: 2}
-  skill_3: {fileID: 11400000, guid: 777c1f71febafb44f87d6a88015bbbf9, type: 2}
+  skill_3: {fileID: 11400000, guid: 0d61d2eff433a0f43a6b2af29c9a5ff4, type: 2}
