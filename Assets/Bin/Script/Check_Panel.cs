@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,9 +8,9 @@ namespace magic
     public class Check_Panel : MonoBehaviour
     {
         public Skill_Data skill_data;
-        [SerializeField, Header("±Ô­z¤å¦rª«¥ó")]
+        [SerializeField, Header("æ•˜è¿°æ–‡å­—ç‰©ä»¶")]
         private TextMeshProUGUI object_caption;
-        [SerializeField, Header("¤É¯Å­±ªO")]
+        [SerializeField, Header("å‡ç´šé¢æ¿")]
         private GameObject skill_upgrade_panel;
 
         private EventSystem eventSystem;
@@ -20,11 +20,7 @@ namespace magic
         {
             skill_upgrade_panel.GetComponent<CanvasGroup>().interactable = false;
             eventSystem = EventSystem.current;
-            print("object_caption.name:" + object_caption.name);
-            print("skill_data:" + skill_data.name);
-            print("skill_data.skill_name:" + skill_data.skill_name);
-            print("½T©w¤É¯Å" + skill_data.skill_name.ToString() + "?");
-            object_caption.text = "½T©w¤É¯Å" + skill_data.skill_name.ToString()+"?";
+            object_caption.text = "ç¢ºå®šå‡ç´š" + skill_data.skill_name.ToString()+"?";
         }
 
         private void Update()

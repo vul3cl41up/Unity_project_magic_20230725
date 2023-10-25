@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 namespace magic
@@ -7,6 +7,7 @@ namespace magic
     public class Skill_Pool_Data : ScriptableObject
     {
         public List<Skill_Data> skill_list;
+        public List<bool> have;
 
     }
 }

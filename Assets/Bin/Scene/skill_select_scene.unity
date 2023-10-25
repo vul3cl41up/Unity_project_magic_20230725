@@ -2323,6 +2323,7 @@ MonoBehaviour:
   description: {fileID: 1646270612}
   skill_pool_data: {fileID: 11400000, guid: ca0b919ae1058ff44a97b1f8c4d15702, type: 2}
   role_data: {fileID: 11400000, guid: 007db019604abf74dafe37e1f125d6ff, type: 2}
+  start_button: {fileID: 1085858381}
 --- !u!1 &1486822062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,6 +3548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill_data: {fileID: 11400000, guid: f1cacd4f8e5d7ca4ca1a489e6246b838, type: 2}
+  siblingIdex: 0
 --- !u!1 &1984083939
 GameObject:
   m_ObjectHideFlags: 0

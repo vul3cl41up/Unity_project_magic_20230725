@@ -1,27 +1,30 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace magic
 {
     public class Skill_Select_Panel : MonoBehaviour
     {
-        [SerializeField, Header("¥Í¦¨¤÷ª«¥ó")]
+        [SerializeField, Header("ç”Ÿæˆçˆ¶ç‰©ä»¶")]
         private GameObject skill_pool;
-        [SerializeField, Header("§Ş¯à®æ")]
+        [SerializeField, Header("æŠ€èƒ½æ ¼")]
         private GameObject skill_slot;
-        [SerializeField, Header("¿ï¨ú¤÷ª«¥ó")]
+        [SerializeField, Header("é¸å–çˆ¶ç‰©ä»¶")]
         private GameObject skill_grid;
-        [SerializeField, Header("¿ï¨ú§Ş¯à®æ")]
+        [SerializeField, Header("é¸å–æŠ€èƒ½æ ¼")]
         private GameObject skill_selected_slot;
-        [SerializeField, Header("§Ş¯à¼ĞÃD")]
+        [SerializeField, Header("æŠ€èƒ½æ¨™é¡Œ")]
         private TMP_Text title;
-        [SerializeField, Header("§Ş¯à´y­z")]
+        [SerializeField, Header("æŠ€èƒ½æè¿°")]
         private TMP_Text description;
-        [SerializeField, Header("§Ş¯à¦À¸ê®Æ")]
+        [SerializeField, Header("æŠ€èƒ½æ± è³‡æ–™")]
         private Skill_Pool_Data skill_pool_data;
-        [SerializeField, Header("¨¤¦â¸ê®Æ")]
+        [SerializeField, Header("è§’è‰²è³‡æ–™")]
         private Role_Data role_data;
+        [SerializeField, Header("é–‹å§‹æŒ‰éˆ•")]
+        private GameObject start_button;
 
         EventSystem eventSystem;
         private GameObject selected;
@@ -35,9 +38,12 @@ namespace magic
 
             for (int i = 1; i < skill_pool_data.skill_list.Count; i++)
             {
-                GameObject new_skill_slot = Instantiate(skill_slot, Vector3.zero, Quaternion.identity, skill_pool.transform);
-                new_skill_slot.GetComponent<Skill_Slot>().skill_data = skill_pool_data.skill_list[i];
-                if (i == 1) eventSystem.firstSelectedGameObject = new_skill_slot;
+                if (skill_pool_data.have[i])
+                {
+                    GameObject new_skill_slot = Instantiate(skill_slot, Vector3.zero, Quaternion.identity, skill_pool.transform);
+                    new_skill_slot.GetComponent<Skill_Slot>().skill_data = skill_pool_data.skill_list[i];
+                    if (i == 1) eventSystem.firstSelectedGameObject = new_skill_slot;
+                }
             }
         }
         private void Update()
@@ -56,7 +62,22 @@ namespace magic
             }
             if (selected.activeSelf == false)
             {
-                selected = skill_grid.transform.GetChild(choose_count).gameObject;
+                int selected_index = selected.transform.GetSiblingIndex();
+                for(int i = 1;i <=6;i++)
+                {
+                    selected_index = selected.transform.GetSiblingIndex();
+                    if (i <= 3)
+                    {
+                        selected_index -= i;
+                        if (selected_index < 0) continue;
+                    }
+                    else
+                    {
+                        selected_index += i-3;
+                    }
+                    if (skill_pool.transform.GetChild(selected_index).gameObject.activeSelf == true) break;
+                }
+                selected = skill_pool.transform.GetChild(selected_index).gameObject;
                 eventSystem.SetSelectedGameObject(selected);
             }
             if (selected.CompareTag("Skill_button") || selected.CompareTag("Skill_selected_button") || selected.CompareTag("Common_attack"))
@@ -73,24 +94,26 @@ namespace magic
             {
                 GameObject new_skill_selected_slot = Instantiate(skill_selected_slot, Vector3.zero, Quaternion.identity, skill_grid.transform);
                 new_skill_selected_slot.GetComponent<Skill_Slot>().skill_data = selected.GetComponent<Skill_Slot>().skill_data;
+                new_skill_selected_slot.GetComponent<Skill_Slot>().siblingIdex = selected.transform.GetSiblingIndex();
                 selected.SetActive(false);
                 choose_count++;
+                if (choose_count == 3) eventSystem.SetSelectedGameObject(start_button);
             }
         }
         private void Cancel()
         {
             if (Input.GetButtonDown("Submit") && selected.CompareTag("Skill_selected_button") && choose_count > 0)
             {
-                int index = (int)selected.GetComponent<Skill_Slot>().skill_data.skill_type;
-                skill_pool.transform.GetChild(index - 1).gameObject.SetActive(true);
+                int index = (int)selected.GetComponent<Skill_Slot>().siblingIdex;
+                skill_pool.transform.GetChild(index).gameObject.SetActive(true);
                 Destroy(selected);
                 choose_count--;
             }
             if (Input.GetButtonDown("Cancel") && choose_count > 0)
             {
                 selected = skill_grid.transform.GetChild(choose_count).gameObject;
-                int index = (int)selected.GetComponent<Skill_Slot>().skill_data.skill_type;
-                skill_pool.transform.GetChild(index - 1).gameObject.SetActive(true);
+                int index = (int)selected.GetComponent<Skill_Slot>().siblingIdex;
+                skill_pool.transform.GetChild(index).gameObject.SetActive(true);
                 Destroy(selected);
                 choose_count--;
             }

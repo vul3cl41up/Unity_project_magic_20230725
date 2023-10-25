@@ -1,5 +1,6 @@
-using Model_scene_1;
+ï»¿using Model_scene_1;
 using Model_scene_3;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -7,13 +8,15 @@ namespace magic
 {
     public class Role_Control : MonoBehaviour
     {
-        #region ¸ê®Æ
-        [SerializeField, Header("¨¤¦â¸ê®ÆÀÉ®×")]
+        #region è³‡æ–™
+        [SerializeField, Header("è§’è‰²è³‡æ–™æª”æ¡ˆ")]
         private Role_Data role_data_file;
-        [SerializeField, Header("¨¤¦âªºµe¥¬")]
+        [SerializeField, Header("è§’è‰²çš„ç•«å¸ƒ")]
         Transform role_canvas;
-        [SerializeField, Header("¨ü¶Ë¦å¶q¹w¸mª«")]
+        [SerializeField, Header("å—å‚·è¡€é‡é ç½®ç‰©")]
         GameObject damage_text;
+        [SerializeField, Header("çµæŸé¢æ¿")]
+        GameObject end_panel;
 
         private Rigidbody2D rb;
         private Animator animator;
@@ -44,14 +47,14 @@ namespace magic
         }
         private void FixedUpdate()
         {
-            //¨C©T©w®É¶¡½Õ¾ã²¾°Ê³t«×
+            //æ¯å›ºå®šæ™‚é–“èª¿æ•´ç§»å‹•é€Ÿåº¦
             Move();
         }
         private void Move()
         {
-            //¨ú±o¿é¤J
+            //å–å¾—è¼¸å…¥
             move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
-            //¼Ğ·Ç¤ÆÅı¦U¤è¦V²¾°Ê¼Æ­È¬Û¦P
+            //æ¨™æº–åŒ–è®“å„æ–¹å‘ç§»å‹•æ•¸å€¼ç›¸åŒ
             move_input = move_input.normalized;
             rb.velocity = move_input * move_speed;
         }
@@ -86,19 +89,18 @@ namespace magic
                 hp -= damage;
                 InjuriedAnimation(damage);
                 if (hp <= 0)
-                    Dead();
+                    StartCoroutine(Dead());
             }
         }
-        void Dead()
+        IEnumerator Dead()
         {
             rb.velocity = Vector3.zero;
             is_dead = true;
             DeadAnimation();
             enabled = false;
-            for(int i = 0;  i < transform.childCount; i++)
-            {
-                transform.GetChild(i).gameObject.SetActive(false);
-            }
+            yield return new WaitForSeconds(1f);
+            end_panel.SetActive(true);
+            end_panel.GetComponent<End_Panel>().Change_Result_Text("ä½ å·²æ­»äº¡!");
         }
         void DeadAnimation()
         {
