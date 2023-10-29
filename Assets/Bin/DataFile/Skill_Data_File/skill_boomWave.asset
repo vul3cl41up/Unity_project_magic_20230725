@@ -13,27 +13,31 @@ MonoBehaviour:
   m_Name: skill_boomWave
   m_EditorClassIdentifier: 
   skill_type: 2
-  skill_name: "\u885D\u64CA\u6CE2"
-  skill_description: "\u885D\u64CA\u6CE2"
-  cool_time: 1
-  skill_damage: 10
+  skill_name: "\u5149\u6CE2"
+  skill_description: "\u5411\u524D\u91CB\u653E\u9AD8\u80FD\u91CF\u5149\u6CE2"
+  cool_time: 2
+  skill_damage: 9
   skill_prefab: {fileID: 3938240151171136593, guid: 201cc29719ac2dd468142221e35b7c1d,
     type: 3}
   skill_level: 0
-  cool_time_List:
-  - 1
-  - 0.9
-  - 0.8
-  - 0.7
-  - 0.6
+  cool_time_List: []
   skill_damage_List:
-  - 10
-  - 12
+  - 9
+  - 11
   - 14
-  - 16
-  - 18
+  - 20
+  - 25
   skill_upgrade_description:
-  - "Lv1 \u2192 Lv2\ncool time: 1\u21920.9\ndamage: 10\u219212"
-  - "Lv2 \u2192 Lv3\ncool time: 0.9\u21920.8\ndamage: 12\u219214"
-  - "Lv3 \u2192 Lv4\ncool time: 0.8\u21920.7\ndamage: 14\u219216"
-  - "Lv4 \u2192 Lv5\ncool time: 0.7\u21920.6\ndamage: 16\u219218"
+  - "Lv1 \u2192 Lv2\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  - "Lv2 \u2192 Lv3\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  - "Lv3 \u2192 Lv4\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  - "Lv4 \u2192 Lv5\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  stop_time: 0
+  stop_time_List: []
+  scale: 1
+  scale_List: []
+  times: 0
+  times_List: 
+  last_time: 0
+  last_time_List: []
+  skill_image: {fileID: 1283965720, guid: 224bd532ead9cfc429b6181ed309cbdc, type: 3}

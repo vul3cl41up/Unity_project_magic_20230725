@@ -1,4 +1,3 @@
-using Fungus;
 using UnityEngine;
 namespace magic
 {
@@ -6,6 +5,8 @@ namespace magic
     {
         [SerializeField, Header("移動速度")]
         private float speed = 10f;
+        [SerializeField, Header("預置物")]
+        GameObject prefab;
         bool comeback = false;
         float distance = 0f;
         private GameObject target;
@@ -14,6 +15,25 @@ namespace magic
         {
             target = GameObject.FindWithTag("Player");
             rb = gameObject.GetComponent<Rigidbody2D>();
+        }
+        public void Judge_Action()
+        {
+            if (skill_data.skill_level == 4)
+            {
+                Instantiate(prefab, transform.position + transform.rotation * new Vector3(0, 0.4f, 0), transform.rotation);
+                GameObject new_skill = Instantiate(prefab, transform.position + transform.rotation * new Vector3(0, 0.4f, 0), transform.rotation);
+                new_skill.transform.rotation = new_skill.transform.rotation * Quaternion.Euler(0, 0, 45f);
+                new_skill = Instantiate(prefab, transform.position + transform.rotation * new Vector3(0, -0.4f, 0), transform.rotation);
+                new_skill.transform.rotation = new_skill.transform.rotation * Quaternion.Euler(0, 0, -45f);
+                transform.position = transform.position + transform.rotation * new Vector3(0, -0.4f, 0);
+            }
+            else if (skill_data.skill_level >= 1)
+            {
+                Instantiate(prefab, transform.position + transform.rotation * new Vector3(0, 0.4f, 0), transform.rotation);
+                transform.position = transform.position + transform.rotation * new Vector3(0, -0.4f, 0);
+            }
+            
+            
         }
         protected override void OnTriggerEnter2D(Collider2D collision)
         {

@@ -3,8 +3,7 @@ namespace magic
 {
     public class Skill_longWave : Skill_Base
     {
-        [SerializeField, Header("持續時間")]
-        private float duration = 2f;
+        private float duration;
         [SerializeField, Header("攻擊間隔")]
         private float interval = 0.1f;
 
@@ -18,6 +17,7 @@ namespace magic
         {
             attack_system = GetComponentInParent<Attack_System>();
             animator = GetComponent<Animator>();
+            duration = skill_data.last_time;
         }
 
         protected override void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +41,7 @@ namespace magic
             if (duration <= 0 && !end)
             {
                 animator.SetTrigger("end_trigger"); 
+                transform.GetChild(0).gameObject.GetComponent<Animator>().SetTrigger("end_trigger");
                 end = true;
             }
 

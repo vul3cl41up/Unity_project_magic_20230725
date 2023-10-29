@@ -12,28 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8123f1e219b5d04c884161dcdccb0c8, type: 3}
   m_Name: skill_boomerang
   m_EditorClassIdentifier: 
-  skill_type: 2
-  skill_name: "\u56DE\u529B\u93E2"
-  skill_description: "\u56DE\u529B\u93E2"
-  cool_time: 1
-  skill_damage: 10
+  skill_type: 8
+  skill_name: "\u8840\u6EF4\u5B50"
+  skill_description: "\u5411\u524D\u7529\u51FA\u8840\u6EF4\u5B50\uFF0C\u653B\u64CA\u4E00\u5B9A\u8DDD\u96E2\u5F8C\u8FD4\u56DE"
+  cool_time: 3
+  skill_damage: 2
   skill_prefab: {fileID: 2530809737362933386, guid: 53f1552fc0d2e3742904b9bd5902122f,
     type: 3}
   skill_level: 0
   cool_time_List:
-  - 1
-  - 0.9
-  - 0.8
-  - 0.7
-  - 0.6
+  - 3
+  - 3
+  - 2.8
+  - 2.5
+  - 2.5
   skill_damage_List:
-  - 10
-  - 12
-  - 14
-  - 16
-  - 18
+  - 2
+  - 2
+  - 3
+  - 4
+  - 4
   skill_upgrade_description:
-  - "Lv1 \u2192 Lv2\ncool time: 1\u21920.9\ndamage: 10\u219212"
-  - "Lv2 \u2192 Lv3\ncool time: 0.9\u21920.8\ndamage: 12\u219214"
-  - "Lv3 \u2192 Lv4\ncool time: 0.8\u21920.7\ndamage: 14\u219216"
-  - "Lv4 \u2192 Lv5\ncool time: 0.7\u21920.6\ndamage: 16\u219218"
+  - "Lv1 \u2192 Lv2\n2\u9023\u64CA"
+  - "Lv2 \u2192 Lv3\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3\n\u6E1B\u5C11\u51B7\u537B\u6642\u9593"
+  - "Lv3 \u2192 Lv4\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3\n\u6E1B\u5C11\u51B7\u537B\u6642\u9593"
+  - "Lv4 \u2192 Lv5\n\u589E\u52A0\u524D\u65B9\u659C\u5411\u653B\u64CA"
+  stop_time: 0
+  stop_time_List: []
+  scale: 1
+  scale_List: []
+  times: 0
+  times_List: 
+  last_time: 0
+  last_time_List: []
+  skill_image: {fileID: -1866441089, guid: c13337490d40ac940943e29ebd6d9cdb, type: 3}

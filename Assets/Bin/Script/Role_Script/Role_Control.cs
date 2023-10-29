@@ -39,7 +39,6 @@ namespace magic
             hp = hpMax;
             move_speed = role_data_file.move_speed;
 
-            Init_Skill();
         }
         private void Update()
         {
@@ -59,28 +58,7 @@ namespace magic
             rb.velocity = move_input * move_speed;
         }
 
-        void Init_Skill()
-        {
-            Skill_Data common_attack = role_data_file.common_attack;
-            common_attack.skill_level = 0;
-            common_attack.cool_time = common_attack.cool_time_List[0];
-            common_attack.skill_damage = common_attack.skill_damage_List[0];
-
-            Skill_Data skill_1 = role_data_file.skill_1;
-            skill_1.skill_level = 0;
-            skill_1.cool_time = skill_1.cool_time_List[0];
-            skill_1.skill_damage = skill_1.skill_damage_List[0];
-
-            Skill_Data skill_2 = role_data_file.skill_2;
-            skill_2.skill_level = 0;
-            skill_2.cool_time = skill_2.cool_time_List[0];
-            skill_2.skill_damage = skill_2.skill_damage_List[0];
-
-            Skill_Data skill_3 = role_data_file.skill_3;
-            skill_3.skill_level = 0;
-            skill_3.cool_time = skill_3.cool_time_List[0];
-            skill_3.skill_damage = skill_3.skill_damage_List[0];
-        }
+        
 
         public void Take_Attack(float damage)
         {

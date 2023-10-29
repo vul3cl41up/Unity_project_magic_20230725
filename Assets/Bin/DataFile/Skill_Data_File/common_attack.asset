@@ -13,27 +13,31 @@ MonoBehaviour:
   m_Name: common_attack
   m_EditorClassIdentifier: 
   skill_type: 0
-  skill_name: "\u666E\u901A\u653B\u64CA"
-  skill_description: "\u7269\u7406\u653B\u64CA"
+  skill_name: "\u65AC\u64CA"
+  skill_description: "\u4F7F\u7528\u5200\u5177\u5411\u524D\u65B9\u63EE\u780D"
   cool_time: 1
   skill_damage: 10
   skill_prefab: {fileID: 1661981334750456746, guid: 42de36956f688504cb6c400dec1e1f60,
     type: 3}
-  skill_level: 1
-  cool_time_List:
-  - 1
-  - 0.9
-  - 0.8
-  - 0.7
-  - 0.6
+  skill_level: 0
+  cool_time_List: []
   skill_damage_List:
   - 10
   - 12
-  - 14
   - 16
-  - 18
+  - 21
+  - 33
   skill_upgrade_description:
-  - "Lv1 \u2192 Lv2\ncool time: 1\u21920.9\ndamage: 10\u219212"
-  - "Lv2 \u2192 Lv3\ncool time: 0.9\u21920.8\ndamage: 12\u219214"
-  - "Lv3 \u2192 Lv4\ncool time: 0.8\u21920.7\ndamage: 14\u219216"
-  - "Lv4 \u2192 Lv5\ncool time: 0.7\u21920.6\ndamage: 16\u219218"
+  - "Lv1 \u2192 Lv2\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  - "Lv2 \u2192 Lv3\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  - "Lv3 \u2192 Lv4\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  - "Lv4 \u2192 Lv5\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  stop_time: 0
+  stop_time_List: []
+  scale: 1
+  scale_List: []
+  times: 0
+  times_List: 
+  last_time: 0
+  last_time_List: []
+  skill_image: {fileID: 1351934878, guid: 8267c0c59eb52644e96e4236f210ba53, type: 3}

@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ea855cd7d43ae40bf9fa74d6023e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_prefab: {fileID: 5039959504154884551, guid: 3dae62cf0f5f9664297b59a53a0560c3,
+  enemy_prefab: {fileID: 6580426177882565655, guid: 80f71ddd7ede68649bb2f4da528e8836,
     type: 3}
   time: 3
-  number: 10
+  number: 40
   from: 5
   to: 10

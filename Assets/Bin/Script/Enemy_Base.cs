@@ -7,10 +7,13 @@ namespace magic
     {
         [SerializeField]
         GameObject HP_Canvas;
+        [SerializeField, Header("¼úÀy¹D¨ã")]
+        GameObject bonus;
 
         private Rigidbody2D rb;
         public Enemy_Data enemy_data;
         private GameObject target;
+        Collider2D collider2d;
         Role_Control player;
         SpriteRenderer sprite_renderer;
         
@@ -32,11 +35,20 @@ namespace magic
             rb = GetComponent<Rigidbody2D>();
             sprite_renderer = GetComponent<SpriteRenderer>();
             target = GameObject.FindWithTag("Player");
+            collider2d = GetComponent<Collider2D>();
 
             hpMax = enemy_data.Hp;
             hp = hpMax;
             move_speed = enemy_data.move_speed;
             attack_cool_time = enemy_data.attack_cool_time;
+        }
+        private void OnBecameVisible()
+        {
+            collider2d.enabled = true;
+        }
+        private void OnBecameInvisible()
+        {
+            collider2d.enabled = false;
         }
 
         private void Update()
@@ -88,6 +100,7 @@ namespace magic
         {
             is_dead = true;
             target.GetComponent<Upgrade_System>().Get_Exp(enemy_data.exp);
+            Instantiate(bonus, transform.position, Quaternion.identity); 
             Destroy(gameObject);
         }
         protected virtual void Attack()

@@ -115,7 +115,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4182120332616285718}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000059604645, y: 0.007077463}
+  m_Offset: {x: 0.0077596903, y: 0.0070774555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.475}
@@ -151,7 +151,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.008967, y: 0.36751193}
+  m_Size: {x: 0.88481295, y: 0.36751193}
   m_EdgeRadius: 0
 --- !u!114 &8292019699463497198
 MonoBehaviour:
@@ -168,3 +168,4 @@ MonoBehaviour:
   skill_data: {fileID: 11400000, guid: fffc7c39fa704984db0154e8cf24eb62, type: 2}
   icicle_prefab: {fileID: 4182120332616285718}
   times: 2
+  start: 1

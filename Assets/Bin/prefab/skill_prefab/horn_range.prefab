@@ -98,5 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a18ad5f69cf064eb5590eaf8efcb92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horn_prefab: {fileID: 2466400744536988871, guid: ad2d15213b3accb468f474fdfa1faf69,
+  horn_effect: {fileID: 4640411518539749026, guid: 0ab7896d957b4054bac573f24751b503,
     type: 3}
+  skill_data: {fileID: 11400000, guid: 14f312c6259a4644d831151bfce0e3d0, type: 2}

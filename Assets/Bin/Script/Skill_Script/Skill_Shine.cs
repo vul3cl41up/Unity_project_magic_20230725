@@ -9,6 +9,7 @@ namespace magic
         private void Start()
         {
             animator = GetComponent<Animator>();
+            animator.SetInteger("scale_level", skill_data.skill_level);
         }
         protected override void OnTriggerEnter2D(Collider2D collision)
         {
@@ -20,11 +21,11 @@ namespace magic
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position, 1.5f);
+            Gizmos.DrawSphere(transform.position, 1.6f*skill_data.scale);
         }
         public void Judge_Attack()
         {
-            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 1.5f);
+            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 1.6f*skill_data.scale);
             if (cols != null)
                 for (int i = 0; i < cols.Length; i++)
                 {

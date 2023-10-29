@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -43,8 +44,42 @@ namespace magic
             skill_upgrade_panel.SetActive(false);
 
             skill_data.skill_level++;
-            skill_data.cool_time = skill_data.cool_time_List[skill_data.skill_level];
-            skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
+
+            switch(skill_data.skill_type)
+            {
+                case Skill_Type.Common_Attack:
+                case Skill_Type.Skill_BoomWave:
+                    skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
+                    break;
+                case Skill_Type.Skill_Thunder:
+                    skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
+                    skill_data.cool_time = skill_data.cool_time_List[skill_data.skill_level];
+                    skill_data.stop_time = skill_data.stop_time_List[skill_data.skill_level];
+                    break;
+                case Skill_Type.Skill_Shine:
+                    skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
+                    skill_data.scale = skill_data.scale_List[skill_data.skill_level];
+                    break;
+                case Skill_Type.Skill_Icicle:
+                    skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
+                    skill_data.cool_time = skill_data.cool_time_List[skill_data.skill_level];
+                    skill_data.times = skill_data.times_List[skill_data.skill_level];
+                    break;
+                case Skill_Type.Skill_LoneWave:
+                    skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
+                    skill_data.cool_time = skill_data.cool_time_List[skill_data.skill_level];
+                    skill_data.last_time = skill_data.last_time_List[skill_data.skill_level];
+                    break;
+                case Skill_Type.Skill_Boomerang:
+                    skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
+                    skill_data.cool_time = skill_data.cool_time_List[skill_data.skill_level];
+                    break;
+                case Skill_Type.Skill_Horn:
+                    skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
+                    skill_data.scale = skill_data.scale_List[skill_data.skill_level];
+                    break;
+
+            }
             gameObject.SetActive(false);
 
         }

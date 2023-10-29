@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2475422415528746766}
   - component: {fileID: 7991596720391771249}
   - component: {fileID: 952339698598700571}
-  - component: {fileID: 5677712894946185315}
+  - component: {fileID: 6113642532524331112}
   m_Layer: 0
-  m_Name: poison
+  m_Name: thunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.759994, y: 3.0465255}
   m_EdgeRadius: 0
---- !u!114 &5677712894946185315
+--- !u!114 &6113642532524331112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,10 +163,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8436717135894682545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463e9fad25637d845935dabcd6934dbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 610c330d0df300943990d5ee457b9ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skill_data: {fileID: 11400000, guid: 2214d58a4f72cd54780b29ed5bdf4a00, type: 2}
+  effect_prefab: {fileID: 8380708509092199014, guid: 6388e3edf7d0fec49a1920d06568704f,
+    type: 3}
 --- !u!1 &8840681372095510641
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +182,7 @@ GameObject:
   - component: {fileID: 5024585296958719190}
   - component: {fileID: 7938492304908388544}
   m_Layer: 0
-  m_Name: poison_mirror
+  m_Name: thunder_mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,9 +241,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 4
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1991067792, guid: 275053def43a46a459ec0a1c578d1381, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

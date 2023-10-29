@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill_data: {fileID: 11400000, guid: 022980fd79c49af4c8557270654e47e6, type: 2}
   speed: 12
+  prefab: {fileID: 2530809737362933386}
 --- !u!50 &71570323839697256
 Rigidbody2D:
   serializedVersion: 4

@@ -6,11 +6,10 @@ namespace magic
         bool can_attack = true;
         protected override void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Enemy") && can_attack)
-            {
-                can_attack = false;
-                StartCoroutine(Start_Attack(collision));
-            }
+        }
+        private void Start()
+        {
+            GetComponentInParent<Enemy_Base>().Take_Damage(skill_data.skill_damage);
         }
 
     }

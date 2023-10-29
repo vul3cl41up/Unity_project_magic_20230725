@@ -1,16 +1,22 @@
+using magic;
 using System.Threading;
 using UnityEngine;
 
 public class Horn_Range : MonoBehaviour
 {
     [SerializeField, Header("惡魔角預置物")]
-    private GameObject horn_prefab;
-    float timer = 2f;
+    private GameObject horn_effect;
+    [SerializeField, Header("技能資料")]
+    Skill_Data skill_data;
+    private float radius;
+
+    float timer = 1.2f;
     bool can_attack = true;
-    private float radius= 2.5f;
+    
 
     private void Start()
     {
+        radius = skill_data.scale;
         transform.localScale = Vector3.one * radius * 2;
     }
     private void Update()
@@ -34,7 +40,7 @@ public class Horn_Range : MonoBehaviour
             for (int i = 0; i < cols.Length; i++)
             {
                 if (cols[i].CompareTag("Enemy")) //cols[i].gameObject.GetComponent<Enemy_Base_Control>().Take_Damage(role_control, skill_type);
-                    Instantiate(horn_prefab, cols[i].transform.position-new Vector3(0,0.8f,0), Quaternion.identity);
+                    Instantiate(horn_effect, cols[i].transform.position, Quaternion.identity, cols[i].transform);
             }
         Destroy(gameObject);
     }

@@ -54,6 +54,8 @@ namespace magic
             skill_1_timer = role_data.skill_1.cool_time;
             skill_2_timer = role_data.skill_2.cool_time;
             skill_3_timer = role_data.skill_3.cool_time;
+
+            Init_Skill();
         }
         private void Update()
         {
@@ -64,6 +66,65 @@ namespace magic
             skill_3();
 
         }
+
+        void Init_Skill()
+        {
+            Skill_Data common_attack = role_data.common_attack;
+            common_attack.skill_level = 0;
+            common_attack.skill_damage = common_attack.skill_damage_List[0];
+
+            Skill_Data[] skill_data = new Skill_Data[3];
+            skill_data[0] = role_data.skill_1;
+            skill_data[1] = role_data.skill_2;
+            skill_data[2] = role_data.skill_3;
+            for(int i = 0;i<skill_data.Length;i++)
+            {
+                switch(skill_data[i].skill_type) 
+                {
+                    case Skill_Type.Skill_Thunder:
+                        skill_data[i].skill_level = 0;
+                        skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
+                        skill_data[i].cool_time = skill_data[i].cool_time_List[0];
+                        skill_data[i].stop_time = skill_data[i].stop_time_List[0];
+                        break;
+                    case Skill_Type.Skill_Shine:
+                        skill_data[i].skill_level = 0;
+                        skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
+                        skill_data[i].scale = skill_data[i].scale_List[0];
+                        break;
+                    case Skill_Type.Skill_Icicle:
+                        skill_data[i].skill_level = 0;
+                        skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
+                        skill_data[i].cool_time = skill_data[i].cool_time_List[0];
+                        skill_data[i].times = skill_data[i].times_List[0];
+                        break;
+                    case Skill_Type.Skill_BoomWave:
+                        skill_data[i].skill_level = 0;
+                        skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
+                        break;
+                    case Skill_Type.Skill_LoneWave:
+                        skill_data[i].skill_level = 0;
+                        skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
+                        skill_data[i].cool_time = skill_data[i].cool_time_List[0];
+                        skill_data[i].last_time = skill_data[i].last_time_List[0];
+                        break;
+                    case Skill_Type.Skill_Boomerang:
+                        skill_data[i].skill_level = 0;
+                        skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
+                        skill_data[i].cool_time = skill_data[i].cool_time_List[0];
+                        break;
+                    case Skill_Type.Skill_ShockWave:
+                        skill_data[i].skill_level = 0;
+                        break;
+                    case Skill_Type.Skill_Horn:
+                        skill_data[i].skill_level = 0;
+                        skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
+                        skill_data[i].scale = skill_data[i].scale_List[0];
+                        break;
+                }
+            }
+        }
+
         void Common_Attack()
         {
             if (role_data.common_attack)
@@ -115,10 +176,11 @@ namespace magic
 
         void Generate_Skill(Skill_Data skill_data)
         {
+            GameObject new_skill;
             switch (skill_data.skill_type)
             {
                 case Skill_Type.Common_Attack:
-                case Skill_Type.Skill_Poison:
+                case Skill_Type.Skill_Thunder:
                 case Skill_Type.Skill_LoneWave:
                 case Skill_Type.Skill_BoomWave:
                     Instantiate(skill_data.skill_prefab,
@@ -132,9 +194,31 @@ namespace magic
                     (transform.rotation * skill_data.skill_prefab.transform.rotation),
                     transform);
                     break;
+                case Skill_Type.Skill_Icicle:
+                    new_skill = Instantiate(skill_data.skill_prefab,
+                    direction_now.transform.position +
+                    direction_now.transform.rotation * skill_data.skill_prefab.transform.localPosition,
+                    (direction_now.transform.rotation * skill_data.skill_prefab.transform.rotation));
+                    new_skill.GetComponent<Skill_icicle>().judge_action();
+                    break;
+                case Skill_Type.Skill_Boomerang:
+                    new_skill = Instantiate(skill_data.skill_prefab,
+                    direction_now.transform.position +
+                    direction_now.transform.rotation * skill_data.skill_prefab.transform.localPosition,
+                    (direction_now.transform.rotation * skill_data.skill_prefab.transform.rotation));
+                    new_skill.GetComponent<Skill_boomerang>().Judge_Action();
+                    break;
+                case Skill_Type.Skill_ShockWave:
+                    new_skill = Instantiate(skill_data.skill_prefab,
+                    direction_now.transform.position +
+                    direction_now.transform.rotation * skill_data.skill_prefab.transform.localPosition,
+                    (direction_now.transform.rotation * skill_data.skill_prefab.transform.rotation));
+                    new_skill.GetComponent<Skill_ShockWave>().Judge_Action();
+                    break;
                 default:
                     Instantiate(skill_data.skill_prefab,
-                    direction_now.transform.position + direction_now.transform.rotation * skill_data.skill_prefab.transform.localPosition,
+                    direction_now.transform.position + 
+                    direction_now.transform.rotation * skill_data.skill_prefab.transform.localPosition,
                     (direction_now.transform.rotation * skill_data.skill_prefab.transform.rotation));
                     break;
             }

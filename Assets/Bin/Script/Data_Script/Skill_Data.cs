@@ -18,6 +18,15 @@ namespace magic
         public List<float> skill_damage_List;
         [TextArea]
         public List<string> skill_upgrade_description;
+        public float stop_time;
+        public List<float> stop_time_List;
+        public float scale;
+        public List<float> scale_List;
+        public int times;
+        public List<int> times_List;
+        public float last_time;
+        public List<float> last_time_List;
+        public Sprite skill_image;
     }
 }
 
