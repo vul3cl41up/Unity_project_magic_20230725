@@ -15,6 +15,10 @@ public class Scene_control : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+    public static void Skill_Scene()
+    {
+        SceneManager.LoadScene(4);
+    }
     public static void Model_3_Scene()
     {
         SceneManager.LoadScene(3);
