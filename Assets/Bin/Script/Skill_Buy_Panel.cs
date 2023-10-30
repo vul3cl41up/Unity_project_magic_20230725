@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEditor;
 
 namespace magic
 {
@@ -23,6 +24,8 @@ namespace magic
         private GameObject check_panel;
         [SerializeField, Header("獎勵道具數量文字")]
         TextMeshProUGUI bonus_text;
+        [SerializeField, Header("解釋面板位置")]
+        Transform pos;
 
         EventSystem eventSystem;
         private GameObject selected;
@@ -39,7 +42,6 @@ namespace magic
         {
             eventSystem = EventSystem.current;
             skill_describe_panel_transform = skill_describe_panel.GetComponent<RectTransform>();
-            origin_pos = new Vector3(600, 600, 0);
             title = skill_describe_panel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             describe = skill_describe_panel.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             price = skill_describe_panel.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -96,33 +98,17 @@ namespace magic
                 }
             }
         }
+        private void OnDisable()
+        {
+            EditorUtility.SetDirty(state_data);
+            EditorUtility.SetDirty(skill_pool_data);
+        }
         void DisplayDescription()
         {
             if(selected.CompareTag("Skill_buy_button"))
             {
                 skill_describe_panel.SetActive(true);
-                switch(selected.transform.GetSiblingIndex()%4)
-                {
-                    case 0:
-                        skill_describe_panel_transform.position = origin_pos;
-                        break;
-                    case 1:
-                    case 3:
-                        skill_describe_panel_transform.position = origin_pos + new Vector3(350, 0, 0) ;
-                        break;
-                    case 2:
-                        skill_describe_panel_transform.position = origin_pos + new Vector3(700, 0, 0);
-                        break;
-                }
-                switch (selected.transform.GetSiblingIndex() / 4)
-                {
-                    case 1:
-                        skill_describe_panel_transform.position += new Vector3(0, -240, 0);
-                        break;
-                    case 2:
-                        skill_describe_panel_transform.position += new Vector3(0, -480, 0);
-                        break;
-                }
+                skill_describe_panel_transform.position = pos.GetChild(selected.transform.GetSiblingIndex()).position;
 
                 title.text = selected.GetComponent<Skill_Buy_Slot>().skill_data.skill_name.ToString();
                 describe.text = selected.GetComponent<Skill_Buy_Slot>().skill_data.skill_description.ToString();

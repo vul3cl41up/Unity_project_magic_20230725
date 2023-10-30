@@ -19,6 +19,10 @@ namespace magic
 
             EventSystem.current.SetSelectedGameObject(transform.GetChild(0).gameObject);
         }
+        private void OnDisable()
+        {
+            Time.timeScale = 1f;
+        }
 
         public void Change_Result_Text(string result)
         {

@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 022980fd79c49af4c8557270654e47e6, type: 2}
   - {fileID: 11400000, guid: feee454e6e873ac46b43a94b962aaf92, type: 2}
   - {fileID: 11400000, guid: 1c5c1ce1c96813248b4a405a3c082a4f, type: 2}
-  have: 010101010100010001
+  have: 010101010000000000

@@ -1,5 +1,7 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEditor;
 
 namespace magic
 {
@@ -25,6 +27,7 @@ namespace magic
         private void OnDisable()
         {
             state_data.bouns_number += bonus_number;
+            EditorUtility.SetDirty(state_data);
         }
     }
 

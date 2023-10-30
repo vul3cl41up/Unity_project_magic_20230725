@@ -14,7 +14,6 @@ namespace magic
             rb.simulated = false;
             ani = gameObject.GetComponentInParent<Animator>();
             ani.enabled = false;
-            print(stop_time);
         }
 
         private void OnDisable()
@@ -26,7 +25,6 @@ namespace magic
         private void Update()
         {
             timer += Time.deltaTime;
-            print(timer);
             if(timer >= stop_time)
             {
                 Destroy(gameObject);
