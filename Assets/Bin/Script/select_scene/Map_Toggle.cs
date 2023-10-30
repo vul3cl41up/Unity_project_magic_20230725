@@ -21,12 +21,12 @@ namespace magic
             eventSystem = EventSystem.current; 
             seleted = transform.GetChild(0).gameObject;
             eventSystem.SetSelectedGameObject(seleted);
-            for(int i = 1;i < state_data.pass_stage.Count;i++)
+            for(int i = 0;i < state_data.pass_stage.Count-1;i++)
             {
                 if (state_data.pass_stage[i])
                 {
-                    transform.GetChild(i).GetComponent<Toggle>().interactable = true;
-                    transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
+                    transform.GetChild(i+1).GetComponent<Toggle>().interactable = true;
+                    transform.GetChild(i+1).GetChild(0).gameObject.SetActive(false);
                 }
             }
             for(int i = 0; i < transform.childCount;i++)

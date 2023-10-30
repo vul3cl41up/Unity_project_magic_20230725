@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e507acd1188838c40abeed7e5efba876, type: 3}
   m_Name: state_data_file
   m_EditorClassIdentifier: 
-  bouns_number: 500
-  pass_stage: 010101
+  bouns_number: 709
+  pass_stage: 000000
   map: 0

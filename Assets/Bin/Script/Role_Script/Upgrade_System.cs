@@ -26,7 +26,7 @@ namespace magic
             role_level = 1;
             current_exp = 0;
             current_object_exp = 0;
-            text_level.text = role_level.ToString();
+            text_level.text = Mathf.Floor(role_level/100)+" "+ Mathf.Floor(role_level / 10) + " "+ role_level % 10;
             for (int i = 0; i < object_exp.transform.childCount; i++)
             {
                 object_exp.transform.GetChild(i).gameObject.SetActive(false);
@@ -55,7 +55,7 @@ namespace magic
                 object_exp.transform.GetChild(i).gameObject.SetActive(false);
             }
             current_object_exp = 0;
-            text_level.text = role_level.ToString();
+            text_level.text = text_level.text = Mathf.Floor(role_level / 100) + " " + Mathf.Floor(role_level / 10) + " " + role_level % 10; ;
             object_upgrade_UI.SetActive(true);
         }
 
