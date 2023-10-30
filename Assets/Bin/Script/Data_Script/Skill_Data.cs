@@ -27,6 +27,7 @@ namespace magic
         public float last_time;
         public List<float> last_time_List;
         public Sprite skill_image;
+        public int price;
     }
 }
 

@@ -46,3 +46,4 @@ MonoBehaviour:
   last_time: 0
   last_time_List: []
   skill_image: {fileID: -1866441089, guid: c13337490d40ac940943e29ebd6d9cdb, type: 3}
+  price: 100

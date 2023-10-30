@@ -48,3 +48,7 @@ MonoBehaviour:
   scale_List: []
   times: 0
   times_List: 
+  last_time: 0
+  last_time_List: []
+  skill_image: {fileID: -2140218044, guid: 275053def43a46a459ec0a1c578d1381, type: 3}
+  price: 100

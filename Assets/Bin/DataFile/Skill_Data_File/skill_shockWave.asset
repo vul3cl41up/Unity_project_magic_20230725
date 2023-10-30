@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill_type: 7
   skill_name: "\u528D\u6C23"
-  skill_description: "\u528D\u6C23"
+  skill_description: "\u5411\u524D\u91CB\u653E\u528D\u6C23"
   cool_time: 1
   skill_damage: 5
   skill_prefab: {fileID: 5145404724602731934, guid: 5ebfe8ca5d6c8654dbdd7cc19725d84d,
@@ -40,3 +40,5 @@ MonoBehaviour:
   times_List: 
   last_time: 0
   last_time_List: []
+  skill_image: {fileID: 1474601525, guid: 2e5fc0976acca8d43951d9b9e2706524, type: 3}
+  price: 100

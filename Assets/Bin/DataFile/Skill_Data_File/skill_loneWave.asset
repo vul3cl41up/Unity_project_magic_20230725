@@ -50,3 +50,5 @@ MonoBehaviour:
   - 2.1
   - 2.4
   - 2.4
+  skill_image: {fileID: 1365904218, guid: 9ff5c3f8132d6b34a957124a7f0be769, type: 3}
+  price: 100

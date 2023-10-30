@@ -19,10 +19,10 @@ namespace magic
         public GameObject direction_now { get; private set; }
         SpriteRenderer direction_now_sprite_renderer;
 
-        float common_attack_timer = 0;
-        float skill_1_timer = 0;
-        float skill_2_timer = 0;
-        float skill_3_timer = 0;
+        public float common_attack_timer { get; private set; }
+        public float skill_1_timer { get; private set; }
+        public float skill_2_timer { get; private set; }
+        public float skill_3_timer { get; private set; }
 
         private void Start()
         {
