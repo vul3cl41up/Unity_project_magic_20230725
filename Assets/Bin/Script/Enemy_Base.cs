@@ -26,7 +26,7 @@ namespace magic
         private float touch_attack_timer = 0;
         private float touch_attack_cool_time;
 
-        int flip_delay = 50;
+        int flip_delay = 10;
         int count = 0;
         bool is_dead = false;
 

@@ -14,6 +14,8 @@ TagManager:
   - Common_attack
   - pickup
   - Skill_buy_button
+  - Start_button
+  - Cancel_button
   layers:
   - Default
   - TransparentFX

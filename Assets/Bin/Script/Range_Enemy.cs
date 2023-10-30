@@ -39,6 +39,7 @@ namespace magic
             {
                 if (attack_timer >= attack_cool_time)
                 {
+                    ani.SetTrigger("attack_trigger");
                     Instantiate(attack_prefab, transform.position + Quaternion.Euler(0,0,angle)* new Vector3(0.5f,0,0), Quaternion.Euler(0, 0, angle));
                     attack_timer = 0;
                 }

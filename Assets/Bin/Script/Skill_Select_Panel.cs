@@ -86,6 +86,16 @@ namespace magic
                 title.text = selected_skill_data.skill_name;
                 description.text = selected_skill_data.skill_description;
             }
+            else if(selected.CompareTag("Start_button"))
+            {
+                title.text = "開始遊戲";
+                description.text = "";
+            }
+            else if(selected.CompareTag("Cancel_button"))
+            {
+                title.text = "返回";
+                description.text = "";
+            }
         }
 
         private void Choose()

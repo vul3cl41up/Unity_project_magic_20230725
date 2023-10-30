@@ -37,9 +37,6 @@ namespace magic
         TextMeshProUGUI describe;
         TextMeshProUGUI price;
 
-
-
-
         private void Start()
         {
             eventSystem = EventSystem.current;
@@ -69,7 +66,7 @@ namespace magic
         {
             bonus_text.text = state_data.bouns_number.ToString();
             selected = eventSystem.currentSelectedGameObject;
-            if(selected == null)
+            if (selected == null || skill_buy_pool.transform.childCount == 0)
             {
                 selected = return_object;
                 eventSystem.SetSelectedGameObject(selected);

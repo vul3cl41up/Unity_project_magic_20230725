@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 1085858383}
   m_Layer: 5
   m_Name: start_game
-  m_TagString: Untagged
+  m_TagString: Start_button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3213,7 +3213,7 @@ GameObject:
   - component: {fileID: 1855955284}
   m_Layer: 5
   m_Name: cancel
-  m_TagString: Untagged
+  m_TagString: Cancel_button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
