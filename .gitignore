@@ -71,3 +71,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/TextMesh Pro/NotoSerifCJKtc-hinted/NotoSerifCJKtc-Bold SDF.asset
+Web.zip
+Web/Build/Web.data
+Web/Build/Web.framework.js
+Web/Build/Web.wasm
+Web.zip
+Web/Build/Web.data
+Web/Build/Web.framework.js
+Web/Build/Web.wasm

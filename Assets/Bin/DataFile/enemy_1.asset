@@ -16,4 +16,4 @@ MonoBehaviour:
   move_speed: 3
   attack_damage: 4
   exp: 4
-  attack_cool_time: 0.5
+  attack_cool_time: 1

@@ -10,27 +10,27 @@ namespace magic
         [SerializeField, Header("¼úÀy¹D¨ã")]
         GameObject bonus;
 
-        private Rigidbody2D rb;
+        protected Rigidbody2D rb;
         public Enemy_Data enemy_data;
-        private GameObject target;
+        protected GameObject target;
         Collider2D collider2d;
-        Role_Control player;
+        protected Role_Control player;
         SpriteRenderer sprite_renderer;
         
-        private float hpMax;
-        private float hp;
-        private float move_speed;
+        protected float hpMax;
+        protected float hp;
+        protected float move_speed;
 
         private bool is_touch = false;
 
-        private float attack_timer = 0;
-        private float attack_cool_time;
+        private float touch_attack_timer = 0;
+        private float touch_attack_cool_time;
 
         int flip_delay = 50;
         int count = 0;
         bool is_dead = false;
 
-        private void Start()
+        protected virtual void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             sprite_renderer = GetComponent<SpriteRenderer>();
@@ -40,7 +40,7 @@ namespace magic
             hpMax = enemy_data.Hp;
             hp = hpMax;
             move_speed = enemy_data.move_speed;
-            attack_cool_time = enemy_data.attack_cool_time;
+            touch_attack_cool_time = enemy_data.attack_cool_time;
         }
         private void OnBecameVisible()
         {
@@ -51,18 +51,18 @@ namespace magic
             collider2d.enabled = false;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
-            Attack();
+            Touch_Attack();
             Flip();
         }
         private void FixedUpdate()
         {
             Tracking();
         }
-        void Tracking()
+        protected virtual void Tracking()
         {
-            Vector2 diff = new Vector2(target.transform.position.x - this.transform.position.x, target.transform.position.y - this.transform.position.y);
+            Vector2 diff = new Vector2(target.transform.position.x - this.transform.position.x, target.transform.position.y - this.transform.position.y+0.8f);
             rb.velocity = diff.normalized * move_speed;
 
         }
@@ -103,13 +103,13 @@ namespace magic
             Instantiate(bonus, transform.position, Quaternion.identity); 
             Destroy(gameObject);
         }
-        protected virtual void Attack()
+        protected virtual void Touch_Attack()
         {
-            attack_timer += Time.deltaTime;
-            if (is_touch && attack_timer >= attack_cool_time)
+            touch_attack_timer += Time.deltaTime;
+            if (is_touch && touch_attack_timer >= touch_attack_cool_time)
             {
                 player.Take_Attack(enemy_data.attack_damage);
-                attack_timer = 0;
+                touch_attack_timer = 0;
             }
         }
         private void Flip()

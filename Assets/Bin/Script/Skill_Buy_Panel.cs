@@ -18,6 +18,7 @@ namespace magic
         private Skill_Pool_Data skill_pool_data;
         [SerializeField, Header("狀態資料")]
         State_Data state_data;
+
         [SerializeField, Header("返回")]
         GameObject return_object;
         [SerializeField, Header("確認面板")]
@@ -30,12 +31,13 @@ namespace magic
         EventSystem eventSystem;
         private GameObject selected;
         bool first = true;
-        Vector3 origin_pos;
         RectTransform skill_describe_panel_transform;
 
         TextMeshProUGUI title;
         TextMeshProUGUI describe;
         TextMeshProUGUI price;
+
+
 
 
         private void Start()
@@ -97,11 +99,6 @@ namespace magic
                     }
                 }
             }
-        }
-        private void OnDisable()
-        {
-            EditorUtility.SetDirty(state_data);
-            EditorUtility.SetDirty(skill_pool_data);
         }
         void DisplayDescription()
         {

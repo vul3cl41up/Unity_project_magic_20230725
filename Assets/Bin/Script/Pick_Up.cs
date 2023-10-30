@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEditor;
 
 namespace magic
 {
@@ -11,6 +10,7 @@ namespace magic
         TextMeshProUGUI number_text;
         [SerializeField, Header("ª¬ºA¸ê®Æ")]
         State_Data state_data;
+
 
         int bonus_number;
 
@@ -27,7 +27,6 @@ namespace magic
         private void OnDisable()
         {
             state_data.bouns_number += bonus_number;
-            EditorUtility.SetDirty(state_data);
         }
     }
 

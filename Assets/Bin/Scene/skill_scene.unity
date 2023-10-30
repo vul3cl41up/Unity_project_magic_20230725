@@ -1100,7 +1100,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u78BA\u5B9A\u8CFC\u8CB7\"\u6280\u80FD\u6A19\u984C\"?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0b6f95c9b600c7f4286d5bc88ecacd83, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f0f66aa4464aab48b3ad876ca7eacc0, type: 2}
   m_sharedMaterial: {fileID: 6362889216186210676, guid: 0b6f95c9b600c7f4286d5bc88ecacd83,
     type: 2}
   m_fontSharedMaterials: []
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -0.8045006}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &928112274
@@ -3162,17 +3162,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 753367557}
     m_Modifications:
+    - target: {fileID: 2529539673501431481, guid: 0264344c17ad88442898f028061d847c,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e14cd8c34973f1d44beee384dcc184ea,
+        type: 2}
+    - target: {fileID: 2529539673501431481, guid: 0264344c17ad88442898f028061d847c,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -921086540852285949, guid: e14cd8c34973f1d44beee384dcc184ea,
+        type: 2}
+    - target: {fileID: 2529539673501431481, guid: 0264344c17ad88442898f028061d847c,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4593576297970285388, guid: 0264344c17ad88442898f028061d847c,
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 0b6f95c9b600c7f4286d5bc88ecacd83,
+      objectReference: {fileID: 11400000, guid: ab03cb5aa3c6c854192f53c4089b54dc,
         type: 2}
     - target: {fileID: 4593576297970285388, guid: 0264344c17ad88442898f028061d847c,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 6362889216186210676, guid: 0b6f95c9b600c7f4286d5bc88ecacd83,
+      objectReference: {fileID: 7157605680321103708, guid: ab03cb5aa3c6c854192f53c4089b54dc,
         type: 2}
     - target: {fileID: 4593576297970285388, guid: 0264344c17ad88442898f028061d847c,
         type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u6D77\u8C5A"
   m_EditorClassIdentifier: 
   Hp: 22
-  move_speed: 3
+  move_speed: 2.5
   attack_damage: 4
   exp: 4
-  attack_cool_time: 0.5
+  attack_cool_time: 1
