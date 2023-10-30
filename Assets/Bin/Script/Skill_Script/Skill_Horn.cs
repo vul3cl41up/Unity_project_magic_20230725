@@ -3,7 +3,6 @@ namespace magic
 {
     public class Skill_Horn : Skill_Base
     {
-        bool can_attack = true;
         protected override void OnTriggerEnter2D(Collider2D collision)
         {
         }

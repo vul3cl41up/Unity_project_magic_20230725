@@ -30,12 +30,17 @@ namespace magic
 
         EventSystem eventSystem;
         private GameObject selected;
-        bool first = true;
         RectTransform skill_describe_panel_transform;
 
         TextMeshProUGUI title;
         TextMeshProUGUI describe;
         TextMeshProUGUI price;
+
+        private void OnEnable()
+        {
+            eventSystem = EventSystem.current;
+            Refresh_Pool();
+        }
 
         private void Start()
         {
@@ -46,21 +51,7 @@ namespace magic
             price = skill_describe_panel.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
 
             bonus_text.text = state_data.bouns_number.ToString();
-            for (int i = 1; i < skill_pool_data.skill_list.Count; i++)
-            {
-                if (!skill_pool_data.have[i])
-                {
-                    GameObject new_skill_slot = Instantiate(skill_buy_slot, Vector3.zero, Quaternion.identity, skill_buy_pool.transform);
-                    new_skill_slot.GetComponent<Skill_Buy_Slot>().skill_data = skill_pool_data.skill_list[i];
-                    new_skill_slot.GetComponent<Skill_Buy_Slot>().skill_pool_index = i;
-                    new_skill_slot.GetComponent<Button>().onClick.AddListener(Choose);
-                    if (first) 
-                    {
-                        eventSystem.firstSelectedGameObject = new_skill_slot; 
-                        first = false;
-                    }
-                }
-            }
+            Refresh_Pool();
         }
         private void Update()
         {

@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace magic
 {
@@ -21,6 +22,8 @@ namespace magic
         private TMP_Text description;
         [SerializeField, Header("技能池資料")]
         private Skill_Pool_Data skill_pool_data;
+        [SerializeField, Header("狀態資料")]
+        State_Data state_datae;
         [SerializeField, Header("角色資料")]
         private Role_Data role_data;
         [SerializeField, Header("開始按鈕")]
@@ -136,7 +139,16 @@ namespace magic
                 role_data.skill_1 = skill_grid.transform.GetChild(1).gameObject.GetComponent<Skill_Slot>().skill_data;
                 role_data.skill_2 = skill_grid.transform.GetChild(2).gameObject.GetComponent<Skill_Slot>().skill_data;
                 role_data.skill_3 = skill_grid.transform.GetChild(3).gameObject.GetComponent<Skill_Slot>().skill_data;
-                Scene_control.Model_3_Scene();
+                switch(state_datae.map)
+                {
+                    case 0:
+                        Scene_control.Map_1_Scene();
+                        break;
+                    case 1:
+                        Scene_control.Map_2_Scene(); break;
+                    case 2:
+                        Scene_control.Map_3_Scene(); break;
+                }
             }
         }
     }

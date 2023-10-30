@@ -2322,6 +2322,7 @@ MonoBehaviour:
   title: {fileID: 2059508469}
   description: {fileID: 1646270612}
   skill_pool_data: {fileID: 11400000, guid: ca0b919ae1058ff44a97b1f8c4d15702, type: 2}
+  state_datae: {fileID: 11400000, guid: d88d78234aa079c44b2b687d65b25d8f, type: 2}
   role_data: {fileID: 11400000, guid: 007db019604abf74dafe37e1f125d6ff, type: 2}
   start_button: {fileID: 1085858381}
 --- !u!1 &1486822062
@@ -2790,8 +2791,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u63CF\u8FF0\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: caa4df329ce09a44bbad6756a3f68976, type: 2}
-  m_sharedMaterial: {fileID: -2458952659296350534, guid: caa4df329ce09a44bbad6756a3f68976,
+  m_fontAsset: {fileID: 11400000, guid: a7457751e0bfe3a45a40ef1cd99344cd, type: 2}
+  m_sharedMaterial: {fileID: -9012173845338957089, guid: a7457751e0bfe3a45a40ef1cd99344cd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3914,8 +3915,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u6280\u80FD\u540D\u7A31\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3319362281c3ba949966dd6295e61b77, type: 2}
-  m_sharedMaterial: {fileID: -2719307630284221668, guid: 3319362281c3ba949966dd6295e61b77,
+  m_fontAsset: {fileID: 11400000, guid: a7457751e0bfe3a45a40ef1cd99344cd, type: 2}
+  m_sharedMaterial: {fileID: -9012173845338957089, guid: a7457751e0bfe3a45a40ef1cd99344cd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

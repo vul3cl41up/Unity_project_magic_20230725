@@ -28,7 +28,7 @@ namespace Model_scene_3
         private float move_speed;
         private float attack_speed;
 
-        private bool is_dead = false;
+        //private bool is_dead = false;
         private bool is_touch = false;
         private bool can_attack = true;
 

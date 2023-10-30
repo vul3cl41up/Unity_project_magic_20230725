@@ -79,9 +79,9 @@ namespace Model_scene_3
             add { skill_4_received += value; }
             remove { skill_4_received -= value; }
         }
-        private bool can_skill_4;
+        /*private bool can_skill_4;
         float skill_4_cool_time;
-        float skill_4_cool_timer;
+        float skill_4_cool_timer;*/
         #endregion
 
         #region 受傷與死亡參數
@@ -122,9 +122,9 @@ namespace Model_scene_3
             skill_3_cool_time = Current_Character_Data.skill_3.cool_time;
             skill_3_cool_timer = 0f;
 
-            can_skill_4 = true;
+            /*can_skill_4 = true;
             skill_4_cool_time = Current_Character_Data.skill_4.cool_time;
-            skill_4_cool_timer = 0f;
+            skill_4_cool_timer = 0f;*/
         }
         private void Update()
         {

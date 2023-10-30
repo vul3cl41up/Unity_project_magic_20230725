@@ -110,7 +110,7 @@ namespace Model_scene_3
                 current_state_data.character_data.skill_2 = skill_grid.transform.GetChild(2).gameObject.GetComponent<Skill_Slot_Control>().skill_data;
                 current_state_data.character_data.skill_3 = skill_grid.transform.GetChild(3).gameObject.GetComponent<Skill_Slot_Control>().skill_data;
                 //current_state_data.character_data.skill_4 = skill_grid.transform.GetChild(4).gameObject.GetComponent<Skill_Slot_Control>().skill_data;
-                Scene_control.Model_3_Scene();
+                //Scene_control.Model_3_Scene();
             }
         }    
     }

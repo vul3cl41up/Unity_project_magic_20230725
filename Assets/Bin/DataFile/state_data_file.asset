@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: state_data_file
   m_EditorClassIdentifier: 
   bouns_number: 500
+  pass_stage: 010101
+  map: 0
