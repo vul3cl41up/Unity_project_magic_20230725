@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da34cfc227a90d845a17c84da4e25bd1, type: 3}
   m_Name: role_data_file
   m_EditorClassIdentifier: 
-  move_speed: 5
+  move_speed: 6
   Hp: 100
   common_attack: {fileID: 11400000, guid: f1cacd4f8e5d7ca4ca1a489e6246b838, type: 2}
   skill_1: {fileID: 11400000, guid: 1c5c1ce1c96813248b4a405a3c082a4f, type: 2}
