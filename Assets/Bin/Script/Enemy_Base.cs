@@ -18,7 +18,7 @@ namespace magic
         SpriteRenderer sprite_renderer;
         
         protected float hpMax;
-        protected float hp;
+        public float hp { get; protected set; }
         protected float move_speed;
 
         private bool is_touch = false;
