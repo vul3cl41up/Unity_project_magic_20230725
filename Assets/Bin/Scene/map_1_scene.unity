@@ -1472,7 +1472,7 @@ Transform:
   - {fileID: 1262758633}
   - {fileID: 1953108464}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &651316971
 GameObject:
@@ -4295,7 +4295,7 @@ PrefabInstance:
     - target: {fileID: 8705438672921722682, guid: 10f7d192590a1a1439f371315cd79803,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8705438672921722682, guid: 10f7d192590a1a1439f371315cd79803,
         type: 3}
@@ -4757,7 +4757,7 @@ Camera:
   far clip plane: 1000
   field of view: 80
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4787,7 +4787,7 @@ Transform:
   m_Children:
   - {fileID: 479460874}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1670453153
 MonoBehaviour:
@@ -6673,7 +6673,7 @@ PrefabInstance:
     - target: {fileID: 4670824845969159676, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4670824845969159676, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
