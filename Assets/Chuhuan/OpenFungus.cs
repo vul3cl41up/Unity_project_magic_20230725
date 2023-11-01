@@ -12,6 +12,6 @@ public class OpenFungus : MonoBehaviour
     private void OnDisable()
     {
         if(enemy_base.hp <=0)
-        Flowchart.BroadcastFungusMessage("OpenFungus");
+        Flowchart.BroadcastFungusMessage("OpenFungus2");
     }
 }
