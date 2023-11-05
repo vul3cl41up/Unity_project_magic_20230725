@@ -103,6 +103,7 @@ namespace magic
                         skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
                         break;
                     case Skill_Type.Skill_LoneWave:
+                    case Skill_Type.Skill_LaserTrap:
                         skill_data[i].skill_level = 0;
                         skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
                         skill_data[i].cool_time = skill_data[i].cool_time_List[0];
@@ -121,6 +122,7 @@ namespace magic
                         skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
                         skill_data[i].scale = skill_data[i].scale_List[0];
                         break;
+
                 }
             }
         }

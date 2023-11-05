@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8123f1e219b5d04c884161dcdccb0c8, type: 3}
+  m_Name: skill_laserTrap
+  m_EditorClassIdentifier: 
+  skill_type: 9
+  skill_name: "\u707C\u71B1\u9677\u9631"
+  skill_description: "\u88FD\u9020\u4E00\u500B\u7BC4\u570D\u9677\u9631\uFF0C\u9032\u5165\u9677\u9631\u7684\u6575\u4EBA\u5C07\u906D\u53D7\u653B\u64CA"
+  cool_time: 3.3
+  skill_damage: 0.8
+  skill_prefab: {fileID: 5536274771544782383, guid: 3f8921249c95e8a49b505e9d5ef17f08,
+    type: 3}
+  skill_level: 0
+  cool_time_List:
+  - 3.3
+  - 3.3
+  - 2.8
+  - 2.8
+  - 2.4
+  skill_damage_List:
+  - 0.8
+  - 0.8
+  - 0.8
+  - 1
+  - 1.2
+  skill_upgrade_description:
+  - "Lv1 \u2192 Lv2\n\u589E\u52A0\u6301\u7E8C\u6642\u9593"
+  - "Lv2 \u2192 Lv3\n\u6E1B\u5C11\u51B7\u537B\u6642\u9593"
+  - "Lv3 \u2192 Lv4\n\u589E\u52A0\u6301\u7E8C\u6642\u9593\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  - "Lv4 \u2192 Lv5\n\u6E1B\u5C11\u51B7\u537B\u6642\u9593\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  stop_time: 0
+  stop_time_List: []
+  scale: 0
+  scale_List: []
+  times: 0
+  times_List: 
+  last_time: 5
+  last_time_List:
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  skill_image: {fileID: 21300000, guid: 0f8412452693b8a489c0480328347db4, type: 3}
+  price: 100
