@@ -50,9 +50,13 @@ namespace magic
         {
             move_count++;
             Vector2 diff = new Vector2(target.transform.position.x - this.transform.position.x, target.transform.position.y - this.transform.position.y+0.8f);
-            angle = Vector2.Angle(Vector2.left,diff);
+            if(diff.y >0)
+                angle = -Vector2.Angle(Vector2.left,diff);
+            else
+                angle = Vector2.Angle(Vector2.left, diff);
 
-            if(diff.magnitude <=attack_range)
+
+            if (diff.magnitude <=attack_range)
             {
                 start_attack = true;
             }
