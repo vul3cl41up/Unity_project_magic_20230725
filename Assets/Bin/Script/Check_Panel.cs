@@ -71,6 +71,7 @@ namespace magic
                     skill_data.last_time = skill_data.last_time_List[skill_data.skill_level];
                     break;
                 case Skill_Type.Skill_Boomerang:
+                case Skill_Type.Skill_BlackHole:
                     skill_data.skill_damage = skill_data.skill_damage_List[skill_data.skill_level];
                     skill_data.cool_time = skill_data.cool_time_List[skill_data.skill_level];
                     break;

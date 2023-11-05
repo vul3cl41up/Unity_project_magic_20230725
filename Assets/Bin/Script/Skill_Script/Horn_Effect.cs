@@ -8,6 +8,7 @@ namespace magic
         GameObject prefab;
         [SerializeField, Header("持續時間")]
         float last_time = 5.3f;
+        
 
         float attack_interval = 1;
 

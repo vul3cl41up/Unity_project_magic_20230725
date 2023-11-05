@@ -110,6 +110,7 @@ namespace magic
                         skill_data[i].last_time = skill_data[i].last_time_List[0];
                         break;
                     case Skill_Type.Skill_Boomerang:
+                    case Skill_Type.Skill_BlackHole:
                         skill_data[i].skill_level = 0;
                         skill_data[i].skill_damage = skill_data[i].skill_damage_List[0];
                         skill_data[i].cool_time = skill_data[i].cool_time_List[0];
@@ -216,6 +217,12 @@ namespace magic
                     direction_now.transform.rotation * skill_data.skill_prefab.transform.localPosition,
                     (direction_now.transform.rotation * skill_data.skill_prefab.transform.rotation));
                     new_skill.GetComponent<Skill_ShockWave>().Judge_Action();
+                    break;
+                case Skill_Type.Skill_BlackHole:
+                    Instantiate(skill_data.skill_prefab,
+                    direction_now.transform.position +
+                    direction_now.transform.rotation * skill_data.skill_prefab.transform.localPosition,
+                    Quaternion.identity);
                     break;
                 default:
                     Instantiate(skill_data.skill_prefab,
