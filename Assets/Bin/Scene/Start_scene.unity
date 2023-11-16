@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 418640818}
   - component: {fileID: 418640817}
   m_Layer: 5
-  m_Name: "\u6A19\u984C"
+  m_Name: title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 47.634018, y: 64.34228}
+  scrollPos: {x: 58, y: 43.5}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 399.66666
@@ -1592,8 +1592,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1332363485}
-  selectedCommands:
-  - {fileID: 1332363488}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1622,7 +1621,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1332363488
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1961,7 +1960,7 @@ GameObject:
   - component: {fileID: 1667269062}
   - component: {fileID: 1667269061}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: start_scene_canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2160,6 +2159,18 @@ PrefabInstance:
     - target: {fileID: 188902, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
       propertyPath: m_Name
       value: SayDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 188902, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294266, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294266, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11448914, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
       propertyPath: m_Sprite
