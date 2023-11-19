@@ -8,6 +8,7 @@ namespace magic
         [SerializeField, Header("技能資料")]
         protected Skill_Data skill_data;
 
+
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))
@@ -17,14 +18,25 @@ namespace magic
 
         }
 
+        /// <summary>
+        /// 技能結束
+        /// </summary>
         protected virtual void End()
         {
             Destroy(gameObject);
         }
+        /// <summary>
+        /// 技能施放過久
+        /// </summary>
         protected virtual void Long_Time()
         {
             Destroy(gameObject, 3f);
         }
+        /// <summary>
+        /// 執行攻擊
+        /// </summary>
+        /// <param name="collision">技能物件所碰觸到的物件</param>
+        /// <returns></returns>
         protected virtual IEnumerator Start_Attack(Collider2D collision)
         {
             yield return new WaitForSeconds(0.1f);
