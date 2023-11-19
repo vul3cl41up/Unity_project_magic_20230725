@@ -19,14 +19,14 @@ namespace magic
         }
 
         /// <summary>
-        /// 技能結束
+        /// 處理技能的結束
         /// </summary>
         protected virtual void End()
         {
             Destroy(gameObject);
         }
         /// <summary>
-        /// 技能施放過久
+        /// 處理技能施放過久
         /// </summary>
         protected virtual void Long_Time()
         {
