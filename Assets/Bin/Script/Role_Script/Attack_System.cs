@@ -1,10 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace magic
 {
     public class Attack_System : MonoBehaviour
     {
-        [SerializeField, Header("¨¤¦â¸ê®Æ")]
+        [SerializeField, Header("è§’è‰²è³‡æ–™")]
         private Role_Data role_data;
 
         private Role_Control role_control;
@@ -27,7 +27,7 @@ namespace magic
         private void Start()
         {
             role_control = GetComponent<Role_Control>();
-            #region ¨ú±o¤è¦Vª«¥ó
+            #region å–å¾—æ–¹å‘ç‰©ä»¶
             up = transform.GetChild(0).gameObject;
             left_up = transform.GetChild(1).gameObject;
             left = transform.GetChild(2).gameObject;
@@ -38,7 +38,7 @@ namespace magic
             right_up = transform.GetChild(7).gameObject;
             direction_now = right;
             #endregion
-            #region ¤K­Ó¤è¦Vªº¹Ï¤ù
+            #region å…«å€‹æ–¹å‘çš„åœ–ç‰‡
             up_sprite_renderer = up.GetComponent<SpriteRenderer>();
             left_up_sprite_renderer = left_up.GetComponent<SpriteRenderer>();
             left_sprite_renderer = left.GetComponent<SpriteRenderer>();
@@ -202,7 +202,7 @@ namespace magic
                     direction_now.transform.position +
                     direction_now.transform.rotation * skill_data.skill_prefab.transform.localPosition,
                     (direction_now.transform.rotation * skill_data.skill_prefab.transform.rotation));
-                    new_skill.GetComponent<Skill_icicle>().judge_action();
+                    new_skill.GetComponent<Skill_icicle>().Judge_Action();
                     break;
                 case Skill_Type.Skill_Boomerang:
                     new_skill = Instantiate(skill_data.skill_prefab,

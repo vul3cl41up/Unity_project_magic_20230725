@@ -1,11 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 namespace magic
 {
     public class Skill_boomerang : Skill_Base
     {
-        [SerializeField, Header("²¾°Ê³t«×")]
+        [SerializeField, Header("ç§»å‹•é€Ÿåº¦")]
         private float speed = 10f;
-        [SerializeField, Header("¹w¸mª«")]
+        [SerializeField, Header("é ç½®ç‰©")]
         GameObject prefab;
         bool comeback = false;
         float distance = 0f;
@@ -16,7 +16,7 @@ namespace magic
             target = GameObject.FindWithTag("Player");
             rb = gameObject.GetComponent<Rigidbody2D>();
         }
-        public void Judge_Action()
+        public override void Judge_Action()
         {
             if (skill_data.skill_level == 4)
             {

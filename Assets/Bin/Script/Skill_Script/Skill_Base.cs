@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 namespace magic
 {
     public class Skill_Base : MonoBehaviour
     {
-        [SerializeField, Header("§Ş¯à¸ê®Æ")]
+        [SerializeField, Header("æŠ€èƒ½è³‡æ–™")]
         protected Skill_Data skill_data;
 
 
@@ -19,23 +19,29 @@ namespace magic
         }
 
         /// <summary>
-        /// ³B²z§Ş¯àªºµ²§ô
+        /// æ ¹æ“šæŠ€èƒ½ä¸åŒçš„æƒ…æ³èª¿æ•´æŠ€èƒ½è¡Œç‚º
+        /// </summary>
+        public virtual void Judge_Action()
+        { }    
+
+        /// <summary>
+        /// è™•ç†æŠ€èƒ½çš„çµæŸ
         /// </summary>
         protected virtual void End()
         {
             Destroy(gameObject);
         }
         /// <summary>
-        /// ³B²z§Ş¯à¬I©ñ¹L¤[
+        /// è™•ç†æŠ€èƒ½æ–½æ”¾éä¹…
         /// </summary>
         protected virtual void Long_Time()
         {
             Destroy(gameObject, 3f);
         }
         /// <summary>
-        /// °õ¦æ§ğÀ»
+        /// åŸ·è¡Œæ”»æ“Š
         /// </summary>
-        /// <param name="collision">§Ş¯àª«¥ó©Ò¸IÄ²¨ìªºª«¥ó</param>
+        /// <param name="collision">æŠ€èƒ½ç‰©ä»¶æ‰€ç¢°è§¸åˆ°çš„ç‰©ä»¶</param>
         /// <returns></returns>
         protected virtual IEnumerator Start_Attack(Collider2D collision)
         {

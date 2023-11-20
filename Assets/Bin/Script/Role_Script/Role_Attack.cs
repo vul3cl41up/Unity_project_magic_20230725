@@ -115,23 +115,26 @@ namespace magic
         /// <param name="skill_data"></param>
         void Generate_Skill(Skill_Data skill_data)
         {
+            GameObject new_skill;
             switch (skill_data.skill_type)
             {
                 //根據目前的攻擊方向產生技能物件，並且需要跟隨角色移動(建立在目前攻擊方向的子物件下)
                 case Skill_Type.Common_Attack:
-                    Instantiate(skill_data.skill_prefab,
+                case Skill_Type.Skill_Thunder:
+                    new_skill = Instantiate(skill_data.skill_prefab,
                     direction_now.position + direction_now.rotation * skill_data.skill_prefab.transform.localPosition,
                     (direction_now.rotation * skill_data.skill_prefab.transform.rotation),
                     direction_now);
                     break;
                 //預設的技能施放方式，根據目前的攻擊方向產生技能物件
                 default:
-                    Instantiate(skill_data.skill_prefab,
+                    new_skill = Instantiate(skill_data.skill_prefab,
                     direction_now.position +
                     direction_now.rotation * skill_data.skill_prefab.transform.localPosition,
                     (direction_now.rotation * skill_data.skill_prefab.transform.rotation));
                     break;
             }
+            new_skill.GetComponent<Skill_Base>().Judge_Action();
         }
 
         /// <summary>

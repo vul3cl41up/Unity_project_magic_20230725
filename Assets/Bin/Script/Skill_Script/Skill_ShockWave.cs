@@ -1,18 +1,18 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace magic
 {
     public class Skill_ShockWave : Skill_Base
     {
-        [SerializeField, Header("¹w¸mª«")]
+        [SerializeField, Header("é ç½®ç‰©")]
         GameObject prefab;
-        [SerializeField, Header("²¾°Ê³t«×")]
+        [SerializeField, Header("ç§»å‹•é€Ÿåº¦")]
         private float speed = 10f;
         private void FixedUpdate()
         {
             transform.position += transform.rotation * new Vector3(speed * Time.fixedDeltaTime, 0, 0);
         }
-        public void Judge_Action()
+        public override void Judge_Action()
         {
             if (skill_data.skill_level >= 1)
             {

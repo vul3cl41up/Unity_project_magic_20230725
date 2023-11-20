@@ -12,13 +12,21 @@ namespace magic
         private GameObject icicle_prefab;
         public int times;
         public bool start = true;
+        
+        float move_speed = 12f;
+
         private void OnEnable()
         {
             times = skill_data.times;
             origin_pos = transform.position;
             box_collider = GetComponent<BoxCollider2D>();
         }
-        public void judge_action()
+
+        /// <summary>
+        /// 避免icicle一連鎖產生就碰到原先的敵人
+        /// 若技能等級為4，產生連擊
+        /// </summary>
+        public override void Judge_Action()
         {
             if (start) { box_collider.enabled = true; }
             if (!start)
@@ -33,7 +41,7 @@ namespace magic
         }
         private void FixedUpdate()
         {
-            transform.position +=  transform.rotation * new Vector3(8f * Time.fixedDeltaTime, 0, 0);
+            Move();
         }
         protected override void OnTriggerEnter2D(Collider2D collision)
         {
@@ -43,13 +51,29 @@ namespace magic
                 StartCoroutine(Start_Attack(collision));
             }
         }
-        
+
+        /// <summary>
+        /// 物件的移動
+        /// </summary>
+        private void Move()
+        {
+            transform.position += transform.rotation * new Vector3(move_speed * Time.fixedDeltaTime, 0, 0);
+        }
+
+        /// <summary>
+        /// 延遲開啟碰撞器
+        /// </summary>
+        /// <returns>延遲時間0.15秒</returns>
         IEnumerator open_collider()
         {
             yield return new WaitForSeconds(0.15f);
             box_collider.enabled=true;
         }
 
+        /// <summary>
+        /// 連擊，延遲後產生
+        /// </summary>
+        /// <returns>延遲時間0.13秒</returns>
         IEnumerator Combo()
         {
             yield return new WaitForSeconds(0.13f);
@@ -64,44 +88,44 @@ namespace magic
             {
                 Vector3 generate_point = collision.transform.position;
                 GameObject new_object = Instantiate(icicle_prefab, generate_point + new Vector3(1.414f, 0, 0), Quaternion.identity);
-                new_object.GetComponent<Skill_icicle>().times = times - 1;
+                new_object.GetComponent<Skill_icicle>().times = this.times - 1;
                 new_object.GetComponent<Skill_icicle>().start = false;
-                new_object.GetComponent<Skill_icicle>().judge_action();
+                new_object.GetComponent<Skill_icicle>().Judge_Action();
                 new_object = Instantiate(icicle_prefab, generate_point + new Vector3(1, 1, 0), Quaternion.identity);
                 new_object.transform.rotation = Quaternion.Euler(0, 0, 45);
                 new_object.GetComponent<Skill_icicle>().times = times - 1;
                 new_object.GetComponent<Skill_icicle>().start = false;
-                new_object.GetComponent<Skill_icicle>().judge_action();
+                new_object.GetComponent<Skill_icicle>().Judge_Action();
                 new_object = Instantiate(icicle_prefab, generate_point + new Vector3(0, 1.414f, 0), Quaternion.identity);
                 new_object.transform.rotation = Quaternion.Euler(0, 0, 90);
                 new_object.GetComponent<Skill_icicle>().times = times - 1;
                 new_object.GetComponent<Skill_icicle>().start = false;
-                new_object.GetComponent<Skill_icicle>().judge_action();
+                new_object.GetComponent<Skill_icicle>().Judge_Action();
                 new_object = Instantiate(icicle_prefab, generate_point + new Vector3(-1, 1, 0), Quaternion.identity);
                 new_object.transform.rotation = Quaternion.Euler(0, 0, 135);
                 new_object.GetComponent<Skill_icicle>().times = times - 1;
                 new_object.GetComponent<Skill_icicle>().start = false;
-                new_object.GetComponent<Skill_icicle>().judge_action();
+                new_object.GetComponent<Skill_icicle>().Judge_Action();
                 new_object = Instantiate(icicle_prefab, generate_point + new Vector3(-1.414f, 0, 0), Quaternion.identity);
                 new_object.transform.rotation = Quaternion.Euler(0, 0, 180);
                 new_object.GetComponent<Skill_icicle>().times = times - 1;
                 new_object.GetComponent<Skill_icicle>().start = false;
-                new_object.GetComponent<Skill_icicle>().judge_action();
+                new_object.GetComponent<Skill_icicle>().Judge_Action();
                 new_object = Instantiate(icicle_prefab, generate_point + new Vector3(-1, -1, 0), Quaternion.identity);
                 new_object.transform.rotation = Quaternion.Euler(0, 0, 225);
                 new_object.GetComponent<Skill_icicle>().times = times - 1;
                 new_object.GetComponent<Skill_icicle>().start = false;
-                new_object.GetComponent<Skill_icicle>().judge_action();
+                new_object.GetComponent<Skill_icicle>().Judge_Action();
                 new_object = Instantiate(icicle_prefab, generate_point + new Vector3(0, -1.414f, 0), Quaternion.identity);
                 new_object.transform.rotation = Quaternion.Euler(0, 0, 270);
                 new_object.GetComponent<Skill_icicle>().times = times - 1;
                 new_object.GetComponent<Skill_icicle>().start = false;
-                new_object.GetComponent<Skill_icicle>().judge_action();
+                new_object.GetComponent<Skill_icicle>().Judge_Action();
                 new_object = Instantiate(icicle_prefab, generate_point + new Vector3(1, -1, 0), Quaternion.identity);
                 new_object.transform.rotation = Quaternion.Euler(0, 0, 315);
                 new_object.GetComponent<Skill_icicle>().times = times - 1;
                 new_object.GetComponent<Skill_icicle>().start = false;
-                new_object.GetComponent<Skill_icicle>().judge_action();
+                new_object.GetComponent<Skill_icicle>().Judge_Action();
 
             }
             End();
