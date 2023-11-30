@@ -1,3 +1,4 @@
+using Fungus;
 using TMPro;
 using UnityEngine;
 
@@ -35,6 +36,7 @@ namespace magic
             rb = GetComponent<Rigidbody2D>();
             sprite_renderer = GetComponent<SpriteRenderer>();
             target = GameObject.FindWithTag("Player");
+            player = target.GetComponent<Role_Control>();
             collider2d = GetComponent<Collider2D>();
 
             hpMax = enemy_data.Hp;
@@ -71,13 +73,11 @@ namespace magic
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                player = collision.gameObject.GetComponent<Role_Control>();
                 is_touch = true;
             }
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
-            player = null;
             is_touch = false;
         }
 

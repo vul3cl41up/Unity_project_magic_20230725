@@ -17,9 +17,9 @@ MonoBehaviour:
   skill_description: "\u6301\u7E8C\u5411\u524D\u65B9\u5C04\u51FA\u9AD8\u6EAB\u5C04\u7DDA"
   cool_time: 3.3
   skill_damage: 0.8
-  skill_prefab: {fileID: 7956741325867198991, guid: 9cefa1a85a11f7242bb98ece8a4d198c,
+  skill_prefab: {fileID: 1354683654643566081, guid: 9cefa1a85a11f7242bb98ece8a4d198c,
     type: 3}
-  skill_level: 0
+  skill_level: 1
   cool_time_List:
   - 3.3
   - 3.3
@@ -43,7 +43,7 @@ MonoBehaviour:
   scale_List: []
   times: 0
   times_List: 
-  last_time: 1.8
+  last_time: 2.1
   last_time_List:
   - 1.8
   - 2.1

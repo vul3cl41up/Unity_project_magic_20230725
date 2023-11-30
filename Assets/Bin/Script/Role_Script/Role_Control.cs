@@ -28,6 +28,7 @@ namespace magic
         private float move_speed;
 
         bool is_dead = false;
+        bool can_move = true;
         #endregion
 
         private void Start()
@@ -51,11 +52,15 @@ namespace magic
         }
         private void Move()
         {
-            //取得輸入
-            move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
-            //標準化讓各方向移動數值相同
-            move_input = move_input.normalized;
-            rb.velocity = move_input * move_speed;
+            if(can_move)
+            {
+                //取得輸入
+                move_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
+                //標準化讓各方向移動數值相同
+                move_input = move_input.normalized;
+                rb.velocity = move_input * move_speed;
+            }
+            
         }
 
         

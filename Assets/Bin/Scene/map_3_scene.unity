@@ -1619,7 +1619,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0681517d36fb7de4aa5a062f9814042c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6685,7 +6685,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 12198253701f3ca4fb3de7a95e347b6e,
+      objectReference: {fileID: 11400000, guid: bee8933bbf2881c42a65a24115b4d1c6,
         type: 2}
     - target: {fileID: 3181016252310182163, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
@@ -6696,7 +6696,7 @@ PrefabInstance:
     - target: {fileID: 3181016252310182163, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3224658052719467819, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
@@ -6962,7 +6962,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 12198253701f3ca4fb3de7a95e347b6e,
+      objectReference: {fileID: 11400000, guid: bee8933bbf2881c42a65a24115b4d1c6,
         type: 2}
     - target: {fileID: 7097840847821059502, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
@@ -6973,7 +6973,7 @@ PrefabInstance:
     - target: {fileID: 7097840847821059502, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7138152451330977929, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
@@ -7073,7 +7073,7 @@ PrefabInstance:
     - target: {fileID: 8850776311312271556, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8949209445459499926, guid: 9db0d4edd8b161a4c84df1b74206b2d8,
         type: 3}
