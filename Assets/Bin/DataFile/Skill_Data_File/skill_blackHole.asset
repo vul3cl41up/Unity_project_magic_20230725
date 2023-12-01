@@ -33,10 +33,10 @@ MonoBehaviour:
   - 6
   - 7
   skill_upgrade_description:
-  - 
-  - 
-  - 
-  - 
+  - "Lv1 \u2192 Lv2\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3\n"
+  - "Lv2 \u2192 Lv3\n\u6E1B\u5C11\u51B7\u537B\u6642\u9593"
+  - "Lv3 \u2192 Lv4\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3"
+  - "Lv4 \u2192 Lv5\n\u63D0\u5347\u653B\u64CA\u50B7\u5BB3\n\u6E1B\u5C11\u51B7\u537B\u6642\u9593"
   stop_time: 0
   stop_time_List: []
   scale: 0
